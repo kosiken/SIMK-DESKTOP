@@ -1,0 +1,11 @@
+@import '../globals';
+@import '../mxins';
+
+
+.blue {
+  @include themer($blue, $accent, $special, #1e2b38, #1c2329);
+  .modal {
+    background-color: #000913bf;
+  }
+
+}

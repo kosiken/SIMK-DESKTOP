@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import './bootstrap';
+@import './assets/iconfont/material-icons';
+
+
+@import './styling/blocks';
+@import './styling/theming';
+@import './styling/specials';
+
+@keyframes growing {
+  from {
+    height: 0;
+  }
+  to {
+    height: 40vh;
+  }
+}

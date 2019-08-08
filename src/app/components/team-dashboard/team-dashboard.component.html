@@ -1,0 +1,19 @@
+<div class="team-full">
+  <p>lol</p>
+  <div *ngIf="team" class="team-dashboard-full">
+    <div class="team-info">
+      <h1 class="heading">Team</h1>
+    </div>
+    <div class="player-list dime">
+      <div class="table players-table">
+        <h4 class="title" style="padding: 10px 0">Players</h4>
+
+        <app-player *ngFor="let player of team.players" [Player]="player"></app-player>
+
+      </div>
+
+    </div>
+  </div>
+
+  <app-fixture-dashboard></app-fixture-dashboard>
+</div>

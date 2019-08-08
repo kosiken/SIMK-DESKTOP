@@ -1,0 +1,46 @@
+<div class="container m-2" id="home" style="height: 100%">
+
+  <div class="card dimes border">
+    <div class="card-title">
+
+      <h2 class="card-title light">Create</h2>
+    </div>
+    <form class="form">
+      <div class="form-group">
+
+        <input class="form-control" type="text" name="league" id="league" [(ngModel)]="leagueName"
+          placeholder="League Name" autofocus (change)="getValid()">
+      </div>
+      <div class="form-submit">
+        <!-- <span class="light"></span>&nbsp; -->
+
+        <button class="btn" (click)="createLeague()" [disabled]="getValid()">Create</button>
+      </div>
+    </form>
+    <div class="card-foote">
+      <small>{{message}}</small>
+    </div>
+  </div>
+  <div class="card-columns" style="margin-top: 20px; max-height: 80vh">
+
+
+
+
+
+    <div *ngFor="let league of ls" class="card dime border">
+      <div class="card-header">
+        <span class=" card-title light">
+          <mat-icon>dashboard</mat-icon> {{league | uppercase}}
+        </span>
+      </div>
+      <div class="card-body">
+        <p>
+          <a routerLink="league/{{league}}" class="link">Continue {{league}}</a>
+        </p>
+      </div>
+      <p class="card-text"><small class="text-muted">Fire</small></p>
+    </div>
+  </div>
+
+
+</div>

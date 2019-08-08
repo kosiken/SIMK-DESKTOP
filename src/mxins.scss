@@ -1,0 +1,240 @@
+// Mixins
+// Bootstrap Button Variant
+
+
+@mixin hoverm() {
+  transform: scale(1.2);
+}
+
+@mixin transition-all() {
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+@mixin background-cover() {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+@mixin buton($padding, $bg, $color, $raduis) {
+
+  padding: $padding;
+  background-color: $bg;
+  border: 0.5px solid darken($bg, 10%);
+  color: $color;
+  cursor: pointer;
+  border-radius: $raduis;
+
+}
+
+@mixin sans-serif-font() {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+
+@mixin rounded($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin btn($padding, $border, $col) {
+  background-color: $col;
+  color: $border;
+  @include transition-all();
+
+
+  padding: $padding;
+
+  &:hover {
+    border-color: darken($border, 80%);
+
+  }
+
+}
+
+$desktop: 840px;
+
+@mixin desktop {
+  @media(min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin shadow($x, $y, $inset, $blur, $color) {
+  -webkit-box-shadow: $x $y $inset $blur $color;
+  -moz-box-shadow: $x $y $inset $blur $color;
+  box-shadow: $x $y $inset $blur $color;
+}
+
+@mixin linear-gradient($from, $to) {
+  /* Fallback for sad browsers */
+  background-color: $to;
+  /* Mozilla Firefox */
+  background-image: -moz-linear-gradient($from, $to);
+  /* Opera */
+  background-image: -o-linear-gradient($from, $to);
+  /* WebKit (Chrome 11+) */
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, $from), colorstop(1, $to));
+  /* WebKit (Safari 5.1+, Chrome 10+) */
+  background-image: -webkit-linear-gradient($from, $to);
+  /* IE10 */
+  background-image: -ms-linear-gradient($from, $to);
+  /* W3C */
+  background-image: linear-gradient($from, $to);
+}
+
+
+
+@mixin sclbar($gra, $wi, $ra) {
+
+  &::-webkit-scrollbar {
+    width: $wi;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-track {
+
+
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  &::-webkit-scrollbar-thumb {
+
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    border-radius: $ra;
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+
+
+    background-color: rgba($color: $gra, $alpha: 0.8);
+
+  }
+
+}
+@mixin themer($bg, $ac, $sp, $bil, $bile) {
+  background-color: $bg;
+  color: $sp;
+
+  .over-layer {
+    background-color: rgba($color: $sp, $alpha: .7);
+  }
+
+  .ac {
+    color: $ac
+  }
+
+  .header {
+    background-color: $bg;
+  }
+
+  .dimes {
+    background-color: $bile;
+
+  }
+
+  .dime {
+    background-color: darken($bil, 5%);
+  }
+
+
+  .light {
+    color: $sp;
+  }
+
+  .card-title {
+    color: $sp;
+  }
+
+  .border-lg {
+    border-bottom: 3px solid $sp;
+
+    &:last-of-type {
+      border-left: 0.5px solid $sp;
+    }
+  }
+.gee {
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  &:hover {
+    color: $ac;
+    //border: .2px solid #fff;
+  }
+
+}
+
+
+  .none {
+    display: none;
+  }
+
+
+  input[type=text] {
+    @include transition-all();
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    color: $ac;
+
+    &:hover {
+      border-bottom: 1px solid $ac;
+      padding: 0.9rem 0.95rem;
+      border-radius: 0;
+
+
+    }
+
+    &:focus {
+      background-color: transparent;
+      border-bottom: 1px solid $sp;
+      padding: 0.375rem 0.75rem;
+      border-radius: 0;
+      box-shadow: none;
+      color: $sp;
+    }
+
+    &:focus-within {
+      background-color: transparent;
+      border-bottom: 1px solid $sp;
+      padding: 0.375rem 0.75rem;
+      border-radius: 0;
+      box-shadow: none;
+      color: $sp;
+    }
+
+  }
+
+  .border-b {
+    border-bottom: 0.5px solid $sp;
+  }
+
+  .border {
+    border: .2px solid rgba($sp, 0.5);
+  }
+
+  .btn {
+    cursor: pointer;
+    @include btn(10px 8px, $ac, $bil);
+    font-weight: 600;
+    font-size: 1.05em
+  }
+
+  .light {
+    color: $sp;
+  }
+
+  .list-item {
+    color: $sp
+  }
+  .scrollable {
+    @include sclbar($bil, 15px, 5px);
+  }
+}
+
+

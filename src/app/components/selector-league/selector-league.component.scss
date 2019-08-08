@@ -1,0 +1,17 @@
+#message {
+  //background-color: #29b947;
+  width: 30vw;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  z-index: 999;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+
+  &.open {
+    opacity: 1;
+  }
+
+}

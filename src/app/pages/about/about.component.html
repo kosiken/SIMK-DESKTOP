@@ -1,0 +1,54 @@
+
+<div *ngIf="bods" class="container" id="docs">
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      Docs
+    </mat-expansion-panel-header>
+    <markdown [data]="bods"></markdown>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      License Angular Electron
+    </mat-expansion-panel-header>
+    <p>
+        Copyright 2018 - Maxime GRIS
+
+        Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+        The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+    </p>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      License KRC
+    </mat-expansion-panel-header>
+    <p>
+        Copyright 2019- KRC Media &trade;
+
+        This software is a test software;
+
+    </p>
+    <p>
+      The electron logo, the Angular logo are trademarks of Github and Google respectively
+    </p>
+    <div class="story">
+        <ul class="unstyled">
+       <li> <img [src]="assetUrl + 'logo-white.png'" alt="Logo"> &nbsp; <span>SIMK v1.1.0</span></li>
+       <li><img [src]="assetUrl + 'krc-logo.jpg' " alt="Logo"> <span>By KRC Media &trade;</span></li>
+        </ul>
+      </div>
+  </mat-expansion-panel>
+</mat-accordion>
+
+
+  <button class="btn " (click)="goBack()"><mat-icon>arrow_back</mat-icon>Back</button>
+
+
+
+
+</div>

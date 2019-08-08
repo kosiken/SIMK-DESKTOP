@@ -1,0 +1,41 @@
+.wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+
+  .billy {
+    height: 0;
+    min-height: 0;
+  }
+
+}
+
+.comeOut {
+  bottom: 0;
+  width: 100%;
+  //animation: 0.5s 0s ease-in gee;
+  left: 0;
+
+  .billy {
+    height: 50vh;
+    min-height: 311px;
+  }
+
+
+}
+
+.item {
+
+  display: inline-block;
+  width: 30%;
+
+  .card {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    text-align: center;
+
+  }
+}

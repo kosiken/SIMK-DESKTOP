@@ -1,0 +1,111 @@
+<div class="card dimes   border" style="background: none">
+
+  <div class="card-header">
+    <h3 class="card-title accent">
+      <mat-icon>perm_contact_calendar</mat-icon>
+    </h3>
+  </div>
+
+  <div class="card-body special">
+
+    <div class="col score">
+      <a [routerLink]="['../../team/'+ fixture.away]" routerLinkActive="router-link-active" [ngClass]="gitIt(1)">
+        {{fixture.away}}: {{fixture.score? fixture.score.away: 0}}</a>
+
+
+      <a [routerLink]="['../../team/'+ fixture.home]" routerLinkActive="router-link-active" [ngClass]="gitIt(0)">
+
+
+        {{fixture.home}}:{{fixture.score? fixture.score.home : 0}}</a>
+
+
+
+    </div>
+
+
+
+  </div>
+
+  <div [ngClass]="setClass()" (click)="this.mode=false">
+
+
+
+    <div *ngIf="fixture.score" class=" noBg">
+      <div class="card-header">
+        <h2 class="title light">
+          <span>{{fixture.away}}:</span>
+          <span>{{fixture.score.away}}</span>
+        </h2>
+        <h2 class="title light">
+          <span>{{fixture.home}}:</span>
+          <span>{{fixture.score.home}}</span>
+        </h2>
+      </div>
+
+      <div class="card-body flex" style="justify-content: space-between;
+    width: 100vw;">
+        <table class="table light box-score border dimes">
+          <thead>
+            <tr>
+              <th>Player</th>
+              <th>Points</th>
+              <th>Rebounds</th>
+              <th>Assists</th>
+              <th>Steals</th>
+              <th>Blocks</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let box of fixture.boxScore.home">
+              <td>{{box.player}}</td>
+              <td>{{box.points}}</td>
+              <td>{{box.rebounds}}</td>
+              <td>{{box.assists}}</td>
+              <td>{{box.steals}}</td>
+              <td>{{box.blocks}}</td>
+            </tr>
+
+
+          </tbody>
+        </table>
+        <table class="table light box-score border dimes">
+          <thead>
+            <tr>
+              <th>Player</th>
+              <th>Points</th>
+              <th>Rebounds</th>
+              <th>Assists</th>
+              <th>Steals</th>
+              <th>Blocks</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let box of fixture.boxScore.away">
+              <td>{{box.player}}</td>
+              <td>{{box.points}}</td>
+              <td>{{box.rebounds}}</td>
+              <td>{{box.assists}}</td>
+              <td>{{box.steals}}</td>
+              <td>{{box.blocks}}</td>
+            </tr>
+
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+
+    <h1 [hidden]="!!fixture.score" class="light">Not Played</h1>
+
+
+  </div>
+  <div class="card-footer text-info">
+    <button class="btn noBg light" (click)="this.mode = true">
+      <mat-icon>expand_more</mat-icon>
+    </button>
+  </div>
+</div>

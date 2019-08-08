@@ -1,0 +1,62 @@
+@import "../globals";
+@import "../mxins";
+
+.app-container {
+  display: block;
+  @include transition-all()
+}
+
+.full {
+  height: 100vh;
+}
+
+.nav-item {
+  margin: 25px 0;
+  padding: 0 8px;
+}
+
+#pos {
+  border: 0.2px solid #343a4099;
+
+
+}
+
+a.list-group-item,
+button.list-group-item,
+.mat-expansion-panel-header {
+  text-align: left;
+  @include transition-all();
+  cursor: default;
+  min-width: 250px;
+
+  &:hover {
+    background-color: rgba($color: $gray-700, $alpha: 0.2);
+
+  }
+
+}
+
+button.list-group-item:disabled {
+  background-color: rgba($color: $gray-700, $alpha: 0.5);
+}
+
+#optogg {
+  animation: grow 0.5s 0s linear;
+  opacity: 1;
+  transition: all cubic-bezier(0.39, 0.575, 0.565, 1);
+
+  &[hidden] {
+    opacity: 0;
+
+  }
+}
+
+@keyframes grow {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 100vh;
+  }
+}

@@ -1,0 +1,2008 @@
+{
+    "coaches": [
+    "Janis Bergstrom",
+    "Eryn Weber",
+    "Carolanne Greenfelder",
+    "Ronaldo Nicolas",
+    "Malachi Brekke",
+    "Anne Schimmel",
+    "Baby Bartell",
+    "Yazmin Fay",
+    "Rebeka Hessel",
+    "Peter O'Connell",
+    "Jacques Dooley",
+    "Albin Hammes",
+    "Zaria Durgan",
+    "Roosevelt Reilly",
+    "Xzavier Maggio",
+    "Sean Wehner",
+    "Emilio Larkin",
+    "Aimee Fahey",
+    "Samson Abbott",
+    "Davion Leffler",
+    "Karelle Hammes",
+    "Raul Tillman",
+    "Aliyah Wilkinson",
+    "Eloisa Bogan",
+    "Raul Grimes",
+    "Colton Kohler",
+    "Lavonne Schimmel",
+    "Linda Kerluke",
+    "Steve Medhurst",
+    "Jaeden Paucek",
+    "Isobel Brekke",
+    "Barry Keeling",
+    "Daron Zulauf",
+    "Jacques Lehner",
+    "Meredith Abshire",
+    "Julie Dooley",
+    "Gerardo DuBuque",
+    "Margie Rempel",
+    "Isaias Von",
+    "Miguel Fay",
+    "Abigayle O'Hara",
+    "Reece Corkery",
+    "Corbin Johnson",
+    "Miguel Hammes",
+    "Bette Dooley",
+    "Susan Keeling",
+    "Hubert Herzog",
+    "Llewellyn Senger",
+    "Laurianne Luettgen",
+    "Elena Nicolas",
+    "Tiara Hegmann",
+    "Ettie Heller",
+    "Christophe Mertz",
+    "Jonathan Witting",
+    "Flavie Kuhlman",
+    "Gerardo Erdman",
+    "Thalia Harris",
+    "Winona Boyer",
+    "Tyree Buckridge",
+    "Theresa Pfannerstill",
+    "Rhett Ledner",
+    "Shawna Weissnat",
+    "Aurore Crist",
+    "Margret Harris",
+    "Easter Stehr",
+    "Sherman Block",
+    "Osborne Batz",
+    "Asha Cartwright",
+    "Nikita Adams",
+    "Isabell Hermiston",
+    "Talon Swift",
+    "Fanny Harber",
+    "Rigoberto Terry",
+    "Jaron Johns",
+    "Kenny Windler",
+    "Tod Toy",
+    "Ryder McClure",
+    "Kieran Jenkins",
+    "Sage D'Amore",
+    "Alexys O'Keefe",
+    "Mariela Johnson",
+    "Rigoberto Johns",
+    "Gaylord Carter",
+    "Edmond Turner",
+    "Lexus Jones",
+    "Gerardo Stokes",
+    "Viviane Satterfield",
+    "Emma Shanahan",
+    "Vince Morissette",
+    "Verdie Yost",
+    "Carlos Streich",
+    "Miles Wolff",
+    "Augustine Goodwin",
+    "Adonis Borer",
+    "Abner McGlynn",
+    "Maurine Rath",
+    "Demarcus Anderson",
+    "Dee Emard",
+    "Hayden Rosenbaum",
+    "Emmett Moen"
+    ],
+    "freeAgents": [
+    {
+    "firstName": "Jonathan",
+    "lastName": "Jenkins",
+    "rating": 69,
+    "age": "24yrs",
+    "position": "C",
+    "height": "180cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 38,
+    "defenseR": 80,
+    "reboundingR": 74,
+    "passingR": 35,
+    "blockingR": 36,
+    "stealsR": 3
+    }
+    },
+    {
+    "firstName": "Lamar",
+    "lastName": "Jakubowski",
+    "rating": 67,
+    "age": "26yrs",
+    "position": "SG",
+    "height": "222cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 68,
+    "defenseR": 28,
+    "reboundingR": 20,
+    "passingR": 58,
+    "blockingR": 23,
+    "stealsR": 48
+    }
+    },
+    {
+    "firstName": "Raheem",
+    "lastName": "Mraz",
+    "rating": 63,
+    "age": "31yrs",
+    "position": "PF",
+    "height": "212cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 15,
+    "defenseR": 77,
+    "reboundingR": 76,
+    "passingR": 18,
+    "blockingR": 6,
+    "stealsR": 3
+    }
+    },
+    {
+    "firstName": "Celestino",
+    "lastName": "Schulist",
+    "rating": 64,
+    "age": "30yrs",
+    "position": "SF",
+    "height": "220cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 66,
+    "defenseR": 26,
+    "reboundingR": 207,
+    "passingR": 59,
+    "blockingR": 17,
+    "stealsR": 34
+    }
+    },
+    {
+    "firstName": "Kirean",
+    "lastName": "Fisher",
+    "rating": 63,
+    "age": "24yrs",
+    "position": "PG",
+    "height": "192cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 70,
+    "defenseR": 30,
+    "reboundingR": 18,
+    "passingR": 68,
+    "blockingR": 9,
+    "stealsR": 33
+    }
+    },
+    {
+    "firstName": "Aniyah",
+    "lastName": "Franecki",
+    "rating": 65,
+    "age": "32yrs",
+    "position": "C",
+    "height": "220cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 24,
+    "defenseR": 78,
+    "reboundingR": 74,
+    "passingR": 8,
+    "blockingR": 24,
+    "stealsR": 2
+    }
+    },
+    {
+    "firstName": "Tito",
+    "lastName": "Ferry",
+    "rating": 65,
+    "age": "33yrs",
+    "position": "SG",
+    "height": "198cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 66,
+    "defenseR": 29,
+    "reboundingR": 25,
+    "passingR": 59,
+    "blockingR": 5,
+    "stealsR": 48
+    }
+    },
+    {
+    "firstName": "Akeem",
+    "lastName": "Weber",
+    "rating": 70,
+    "age": "23yrs",
+    "position": "PF",
+    "height": "201cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 60,
+    "defenseR": 77,
+    "reboundingR": 75,
+    "passingR": 29,
+    "blockingR": 26,
+    "stealsR": 27
+    }
+    },
+    {
+    "firstName": "Jenifer",
+    "lastName": "Tillman",
+    "rating": 70,
+    "age": "24yrs",
+    "position": "SF",
+    "height": "213cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 66,
+    "defenseR": 50,
+    "reboundingR": 323,
+    "passingR": 57,
+    "blockingR": 34,
+    "stealsR": 20
+    }
+    },
+    {
+    "firstName": "Bobby",
+    "lastName": "Beer",
+    "rating": 61,
+    "age": "35yrs",
+    "position": "PG",
+    "height": "198cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 66,
+    "defenseR": 3,
+    "reboundingR": 16,
+    "passingR": 65,
+    "blockingR": 23,
+    "stealsR": 0
+    }
+    },
+    {
+    "firstName": "Freeman",
+    "lastName": "Cronin",
+    "rating": 72,
+    "age": "32yrs",
+    "position": "C",
+    "height": "180cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 70,
+    "defenseR": 84,
+    "reboundingR": 85,
+    "passingR": 29,
+    "blockingR": 16,
+    "stealsR": 1
+    }
+    },
+    {
+    "firstName": "Edd",
+    "lastName": "Cummerata",
+    "rating": 73,
+    "age": "35yrs",
+    "position": "SG",
+    "height": "193cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 73,
+    "defenseR": 38,
+    "reboundingR": 33,
+    "passingR": 58,
+    "blockingR": 14,
+    "stealsR": 71
+    }
+    },
+    {
+    "firstName": "Martin",
+    "lastName": "Cole",
+    "rating": 67,
+    "age": "29yrs",
+    "position": "PF",
+    "height": "204cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 25,
+    "defenseR": 82,
+    "reboundingR": 73,
+    "passingR": 19,
+    "blockingR": 53,
+    "stealsR": 15
+    }
+    },
+    {
+    "firstName": "Matthew",
+    "lastName": "Eichmann",
+    "rating": 74,
+    "age": "31yrs",
+    "position": "SF",
+    "height": "180cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 68,
+    "defenseR": 24,
+    "reboundingR": 79,
+    "passingR": 13,
+    "blockingR": 22,
+    "stealsR": 13
+    }
+    },
+    {
+    "firstName": "Jackie",
+    "lastName": "Vandervort",
+    "rating": 60,
+    "age": "29yrs",
+    "position": "PG",
+    "height": "186cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 67,
+    "defenseR": 35,
+    "reboundingR": 24,
+    "passingR": 66,
+    "blockingR": 1,
+    "stealsR": 12
+    }
+    },
+    {
+    "firstName": "Bennett",
+    "lastName": "Boyer",
+    "rating": 65,
+    "age": "30yrs",
+    "position": "C",
+    "height": "208cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 26,
+    "defenseR": 78,
+    "reboundingR": 72,
+    "passingR": 41,
+    "blockingR": 11,
+    "stealsR": 29
+    }
+    },
+    {
+    "firstName": "Angel",
+    "lastName": "Kunze",
+    "rating": 66,
+    "age": "23yrs",
+    "position": "SG",
+    "height": "186cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 66,
+    "defenseR": 31,
+    "reboundingR": 22,
+    "passingR": 57,
+    "blockingR": 5,
+    "stealsR": 25
+    }
+    },
+    {
+    "firstName": "Conor",
+    "lastName": "Hegmann",
+    "rating": 74,
+    "age": "33yrs",
+    "position": "PF",
+    "height": "218cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 67,
+    "defenseR": 77,
+    "reboundingR": 83,
+    "passingR": 40,
+    "blockingR": 14,
+    "stealsR": 29
+    }
+    },
+    {
+    "firstName": "Enola",
+    "lastName": "Parisian",
+    "rating": 72,
+    "age": "29yrs",
+    "position": "SF",
+    "height": "204cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 69,
+    "defenseR": 3,
+    "reboundingR": 79,
+    "passingR": 40,
+    "blockingR": 49,
+    "stealsR": 21
+    }
+    },
+    {
+    "firstName": "Dale",
+    "lastName": "Bailey",
+    "rating": 60,
+    "age": "32yrs",
+    "position": "PG",
+    "height": "205cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 66,
+    "defenseR": 35,
+    "reboundingR": 20,
+    "passingR": 66,
+    "blockingR": 26,
+    "stealsR": 25
+    }
+    },
+    {
+    "firstName": "Shanna",
+    "lastName": "Abshire",
+    "rating": 65,
+    "age": "29yrs",
+    "position": "C",
+    "height": "221cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 11,
+    "defenseR": 78,
+    "reboundingR": 77,
+    "passingR": 18,
+    "blockingR": 43,
+    "stealsR": 11
+    }
+    },
+    {
+    "firstName": "Annalise",
+    "lastName": "Fadel",
+    "rating": 60,
+    "age": "35yrs",
+    "position": "SG",
+    "height": "208cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 68,
+    "defenseR": 38,
+    "reboundingR": 18,
+    "passingR": 57,
+    "blockingR": 18,
+    "stealsR": 15
+    }
+    },
+    {
+    "firstName": "Chandler",
+    "lastName": "Brakus",
+    "rating": 61,
+    "age": "34yrs",
+    "position": "PF",
+    "height": "180cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 34,
+    "defenseR": 78,
+    "reboundingR": 74,
+    "passingR": 52,
+    "blockingR": 49,
+    "stealsR": 20
+    }
+    },
+    {
+    "firstName": "Mathilde",
+    "lastName": "Klein",
+    "rating": 74,
+    "age": "24yrs",
+    "position": "SF",
+    "height": "225cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 67,
+    "defenseR": 76,
+    "reboundingR": 79,
+    "passingR": 1,
+    "blockingR": 62,
+    "stealsR": 20
+    }
+    },
+    {
+    "firstName": "Isidro",
+    "lastName": "Hoeger",
+    "rating": 63,
+    "age": "30yrs",
+    "position": "PG",
+    "height": "184cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 69,
+    "defenseR": 15,
+    "reboundingR": 21,
+    "passingR": 69,
+    "blockingR": 21,
+    "stealsR": 29
+    }
+    },
+    {
+    "firstName": "Liliana",
+    "lastName": "Friesen",
+    "rating": 69,
+    "age": "34yrs",
+    "position": "C",
+    "height": "213cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 34,
+    "defenseR": 81,
+    "reboundingR": 74,
+    "passingR": 11,
+    "blockingR": 43,
+    "stealsR": 2
+    }
+    },
+    {
+    "firstName": "Ned",
+    "lastName": "D'Amore",
+    "rating": 62,
+    "age": "34yrs",
+    "position": "SG",
+    "height": "223cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 69,
+    "defenseR": 20,
+    "reboundingR": 23,
+    "passingR": 55,
+    "blockingR": 1,
+    "stealsR": 35
+    }
+    },
+    {
+    "firstName": "Barton",
+    "lastName": "Heidenreich",
+    "rating": 61,
+    "age": "28yrs",
+    "position": "PF",
+    "height": "220cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 15,
+    "defenseR": 81,
+    "reboundingR": 77,
+    "passingR": 48,
+    "blockingR": 16,
+    "stealsR": 9
+    }
+    },
+    {
+    "firstName": "Delbert",
+    "lastName": "Balistreri",
+    "rating": 69,
+    "age": "27yrs",
+    "position": "SF",
+    "height": "200cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 66,
+    "defenseR": 22,
+    "reboundingR": 275,
+    "passingR": 58,
+    "blockingR": 71,
+    "stealsR": 25
+    }
+    },
+    {
+    "firstName": "Kariane",
+    "lastName": "Russel",
+    "rating": 65,
+    "age": "24yrs",
+    "position": "PG",
+    "height": "210cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 66,
+    "defenseR": 9,
+    "reboundingR": 22,
+    "passingR": 69,
+    "blockingR": 25,
+    "stealsR": 23
+    }
+    },
+    {
+    "firstName": "Sarin",
+    "lastName": "Rau",
+    "rating": 65,
+    "age": "26yrs",
+    "position": "C",
+    "height": "220cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 65,
+    "defenseR": 82,
+    "reboundingR": 77,
+    "passingR": 49,
+    "blockingR": 25,
+    "stealsR": 25
+    }
+    },
+    {
+    "firstName": "Charles",
+    "lastName": "Bosco",
+    "rating": 60,
+    "age": "30yrs",
+    "position": "SG",
+    "height": "213cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 69,
+    "defenseR": 39,
+    "reboundingR": 15,
+    "passingR": 57,
+    "blockingR": 33,
+    "stealsR": 9
+    }
+    },
+    {
+    "firstName": "Desmond",
+    "lastName": "Wyman",
+    "rating": 62,
+    "age": "28yrs",
+    "position": "PF",
+    "height": "218cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 57,
+    "defenseR": 78,
+    "reboundingR": 74,
+    "passingR": 21,
+    "blockingR": 80,
+    "stealsR": 31
+    }
+    },
+    {
+    "firstName": "Granville",
+    "lastName": "Osinski",
+    "rating": 72,
+    "age": "35yrs",
+    "position": "SF",
+    "height": "211cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 78,
+    "defenseR": 19,
+    "reboundingR": 81,
+    "passingR": 69,
+    "blockingR": 47,
+    "stealsR": 63
+    }
+    },
+    {
+    "firstName": "Leopoldo",
+    "lastName": "Wisoky",
+    "rating": 63,
+    "age": "29yrs",
+    "position": "PG",
+    "height": "192cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 67,
+    "defenseR": 34,
+    "reboundingR": 23,
+    "passingR": 67,
+    "blockingR": 16,
+    "stealsR": 28
+    }
+    },
+    {
+    "firstName": "Rachael",
+    "lastName": "Heidenreich",
+    "rating": 61,
+    "age": "26yrs",
+    "position": "C",
+    "height": "216cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 19,
+    "defenseR": 77,
+    "reboundingR": 74,
+    "passingR": 19,
+    "blockingR": 39,
+    "stealsR": 12
+    }
+    },
+    {
+    "firstName": "Tabitha",
+    "lastName": "Bosco",
+    "rating": 64,
+    "age": "23yrs",
+    "position": "SG",
+    "height": "183cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 70,
+    "defenseR": 32,
+    "reboundingR": 21,
+    "passingR": 59,
+    "blockingR": 22,
+    "stealsR": 46
+    }
+    },
+    {
+    "firstName": "Baby",
+    "lastName": "Hoppe",
+    "rating": 69,
+    "age": "27yrs",
+    "position": "PF",
+    "height": "198cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 6,
+    "defenseR": 80,
+    "reboundingR": 75,
+    "passingR": 40,
+    "blockingR": 51,
+    "stealsR": 15
+    }
+    },
+    {
+    "firstName": "Gregg",
+    "lastName": "Buckridge",
+    "rating": 74,
+    "age": "25yrs",
+    "position": "SF",
+    "height": "180cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 68,
+    "defenseR": 43,
+    "reboundingR": 81,
+    "passingR": 7,
+    "blockingR": 48,
+    "stealsR": 25
+    }
+    },
+    {
+    "firstName": "Harry",
+    "lastName": "Blick",
+    "rating": 72,
+    "age": "26yrs",
+    "position": "PG",
+    "height": "223cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 66,
+    "defenseR": 28,
+    "reboundingR": 34,
+    "passingR": 71,
+    "blockingR": 6,
+    "stealsR": 82
+    }
+    },
+    {
+    "firstName": "Mitchell",
+    "lastName": "Schmeler",
+    "rating": 63,
+    "age": "25yrs",
+    "position": "C",
+    "height": "188cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 34,
+    "defenseR": 77,
+    "reboundingR": 72,
+    "passingR": 3,
+    "blockingR": 10,
+    "stealsR": 14
+    }
+    },
+    {
+    "firstName": "Marques",
+    "lastName": "Cartwright",
+    "rating": 65,
+    "age": "29yrs",
+    "position": "SG",
+    "height": "214cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 68,
+    "defenseR": 4,
+    "reboundingR": 16,
+    "passingR": 59,
+    "blockingR": 18,
+    "stealsR": 48
+    }
+    },
+    {
+    "firstName": "Wallace",
+    "lastName": "Herman",
+    "rating": 63,
+    "age": "31yrs",
+    "position": "PF",
+    "height": "182cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 6,
+    "defenseR": 78,
+    "reboundingR": 76,
+    "passingR": 15,
+    "blockingR": 0,
+    "stealsR": 21
+    }
+    },
+    {
+    "firstName": "Telly",
+    "lastName": "Wolf",
+    "rating": 70,
+    "age": "29yrs",
+    "position": "SF",
+    "height": "206cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 67,
+    "defenseR": 70,
+    "reboundingR": 336,
+    "passingR": 60,
+    "blockingR": 61,
+    "stealsR": 17
+    }
+    },
+    {
+    "firstName": "Thora",
+    "lastName": "VonRueden",
+    "rating": 69,
+    "age": "29yrs",
+    "position": "PG",
+    "height": "202cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 65,
+    "defenseR": 15,
+    "reboundingR": 16,
+    "passingR": 67,
+    "blockingR": 10,
+    "stealsR": 2
+    }
+    },
+    {
+    "firstName": "Jonathon",
+    "lastName": "Beatty",
+    "rating": 72,
+    "age": "31yrs",
+    "position": "C",
+    "height": "213cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 59,
+    "defenseR": 76,
+    "reboundingR": 82,
+    "passingR": 7,
+    "blockingR": 19,
+    "stealsR": 17
+    }
+    },
+    {
+    "firstName": "Adella",
+    "lastName": "Hane",
+    "rating": 67,
+    "age": "29yrs",
+    "position": "SG",
+    "height": "197cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 69,
+    "defenseR": 9,
+    "reboundingR": 21,
+    "passingR": 57,
+    "blockingR": 39,
+    "stealsR": 17
+    }
+    },
+    {
+    "firstName": "Izabella",
+    "lastName": "Corkery",
+    "rating": 62,
+    "age": "25yrs",
+    "position": "PF",
+    "height": "191cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 24,
+    "defenseR": 81,
+    "reboundingR": 75,
+    "passingR": 13,
+    "blockingR": 60,
+    "stealsR": 2
+    }
+    },
+    {
+    "firstName": "Maverick",
+    "lastName": "Leannon",
+    "rating": 72,
+    "age": "33yrs",
+    "position": "SF",
+    "height": "204cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 78,
+    "defenseR": 22,
+    "reboundingR": 79,
+    "passingR": 32,
+    "blockingR": 10,
+    "stealsR": 52
+    }
+    },
+    {
+    "firstName": "Genoveva",
+    "lastName": "Waters",
+    "rating": 73,
+    "age": "35yrs",
+    "position": "PG",
+    "height": "182cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 76,
+    "defenseR": 31,
+    "reboundingR": 33,
+    "passingR": 68,
+    "blockingR": 14,
+    "stealsR": 67
+    }
+    },
+    {
+    "firstName": "Chadrick",
+    "lastName": "Littel",
+    "rating": 62,
+    "age": "27yrs",
+    "position": "C",
+    "height": "191cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 27,
+    "defenseR": 82,
+    "reboundingR": 72,
+    "passingR": 5,
+    "blockingR": 36,
+    "stealsR": 3
+    }
+    },
+    {
+    "firstName": "Stephany",
+    "lastName": "Jast",
+    "rating": 67,
+    "age": "24yrs",
+    "position": "SG",
+    "height": "188cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 70,
+    "defenseR": 5,
+    "reboundingR": 21,
+    "passingR": 57,
+    "blockingR": 8,
+    "stealsR": 47
+    }
+    },
+    {
+    "firstName": "Jaeden",
+    "lastName": "Rolfson",
+    "rating": 71,
+    "age": "25yrs",
+    "position": "PF",
+    "height": "188cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 75,
+    "defenseR": 82,
+    "reboundingR": 80,
+    "passingR": 52,
+    "blockingR": 76,
+    "stealsR": 19
+    }
+    },
+    {
+    "firstName": "Taurean",
+    "lastName": "Kreiger",
+    "rating": 62,
+    "age": "31yrs",
+    "position": "SF",
+    "height": "221cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 69,
+    "defenseR": 74,
+    "reboundingR": 174,
+    "passingR": 58,
+    "blockingR": 25,
+    "stealsR": 42
+    }
+    },
+    {
+    "firstName": "Ted",
+    "lastName": "Osinski",
+    "rating": 67,
+    "age": "25yrs",
+    "position": "PG",
+    "height": "213cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 68,
+    "defenseR": 19,
+    "reboundingR": 20,
+    "passingR": 67,
+    "blockingR": 39,
+    "stealsR": 43
+    }
+    },
+    {
+    "firstName": "Maude",
+    "lastName": "Macejkovic",
+    "rating": 72,
+    "age": "30yrs",
+    "position": "C",
+    "height": "225cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 73,
+    "defenseR": 83,
+    "reboundingR": 82,
+    "passingR": 8,
+    "blockingR": 51,
+    "stealsR": 19
+    }
+    },
+    {
+    "firstName": "Jacinthe",
+    "lastName": "Heaney",
+    "rating": 62,
+    "age": "25yrs",
+    "position": "SG",
+    "height": "181cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 68,
+    "defenseR": 22,
+    "reboundingR": 24,
+    "passingR": 56,
+    "blockingR": 22,
+    "stealsR": 5
+    }
+    },
+    {
+    "firstName": "Lexie",
+    "lastName": "Batz",
+    "rating": 65,
+    "age": "24yrs",
+    "position": "PF",
+    "height": "212cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 23,
+    "defenseR": 77,
+    "reboundingR": 75,
+    "passingR": 41,
+    "blockingR": 53,
+    "stealsR": 4
+    }
+    },
+    {
+    "firstName": "Anya",
+    "lastName": "Hermann",
+    "rating": 61,
+    "age": "23yrs",
+    "position": "SF",
+    "height": "202cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 68,
+    "defenseR": 24,
+    "reboundingR": 35,
+    "passingR": 59,
+    "blockingR": 70,
+    "stealsR": 39
+    }
+    },
+    {
+    "firstName": "Nathaniel",
+    "lastName": "Kassulke",
+    "rating": 61,
+    "age": "23yrs",
+    "position": "PG",
+    "height": "222cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 68,
+    "defenseR": 15,
+    "reboundingR": 21,
+    "passingR": 65,
+    "blockingR": 21,
+    "stealsR": 12
+    }
+    },
+    {
+    "firstName": "Karlee",
+    "lastName": "Dickinson",
+    "rating": 63,
+    "age": "30yrs",
+    "position": "C",
+    "height": "206cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 39,
+    "defenseR": 82,
+    "reboundingR": 73,
+    "passingR": 23,
+    "blockingR": 26,
+    "stealsR": 18
+    }
+    },
+    {
+    "firstName": "Claire",
+    "lastName": "Cummerata",
+    "rating": 68,
+    "age": "33yrs",
+    "position": "SG",
+    "height": "187cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 68,
+    "defenseR": 23,
+    "reboundingR": 20,
+    "passingR": 59,
+    "blockingR": 5,
+    "stealsR": 48
+    }
+    },
+    {
+    "firstName": "Pietro",
+    "lastName": "Ziemann",
+    "rating": 74,
+    "age": "23yrs",
+    "position": "PF",
+    "height": "213cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 58,
+    "defenseR": 76,
+    "reboundingR": 78,
+    "passingR": 38,
+    "blockingR": 68,
+    "stealsR": 15
+    }
+    },
+    {
+    "firstName": "Lily",
+    "lastName": "Nitzsche",
+    "rating": 61,
+    "age": "28yrs",
+    "position": "SF",
+    "height": "182cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 66,
+    "defenseR": 71,
+    "reboundingR": 291,
+    "passingR": 59,
+    "blockingR": 17,
+    "stealsR": 31
+    }
+    },
+    {
+    "firstName": "Nelson",
+    "lastName": "McLaughlin",
+    "rating": 73,
+    "age": "26yrs",
+    "position": "PG",
+    "height": "211cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 76,
+    "defenseR": 25,
+    "reboundingR": 31,
+    "passingR": 67,
+    "blockingR": 10,
+    "stealsR": 82
+    }
+    },
+    {
+    "firstName": "Emilia",
+    "lastName": "Jaskolski",
+    "rating": 65,
+    "age": "26yrs",
+    "position": "C",
+    "height": "192cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 4,
+    "defenseR": 82,
+    "reboundingR": 76,
+    "passingR": 54,
+    "blockingR": 71,
+    "stealsR": 32
+    }
+    },
+    {
+    "firstName": "Lavon",
+    "lastName": "Hartmann",
+    "rating": 67,
+    "age": "32yrs",
+    "position": "SG",
+    "height": "206cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 69,
+    "defenseR": 26,
+    "reboundingR": 15,
+    "passingR": 58,
+    "blockingR": 4,
+    "stealsR": 19
+    }
+    },
+    {
+    "firstName": "Price",
+    "lastName": "O'Hara",
+    "rating": 64,
+    "age": "24yrs",
+    "position": "PF",
+    "height": "191cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 13,
+    "defenseR": 79,
+    "reboundingR": 76,
+    "passingR": 14,
+    "blockingR": 39,
+    "stealsR": 11
+    }
+    },
+    {
+    "firstName": "Payton",
+    "lastName": "Cummings",
+    "rating": 72,
+    "age": "26yrs",
+    "position": "SF",
+    "height": "191cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 76,
+    "defenseR": 26,
+    "reboundingR": 81,
+    "passingR": 19,
+    "blockingR": 55,
+    "stealsR": 36
+    }
+    },
+    {
+    "firstName": "Joe",
+    "lastName": "Goodwin",
+    "rating": 72,
+    "age": "23yrs",
+    "position": "PG",
+    "height": "186cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 67,
+    "defenseR": 39,
+    "reboundingR": 28,
+    "passingR": 75,
+    "blockingR": 10,
+    "stealsR": 78
+    }
+    },
+    {
+    "firstName": "Shanelle",
+    "lastName": "Bartell",
+    "rating": 70,
+    "age": "31yrs",
+    "position": "C",
+    "height": "218cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 62,
+    "defenseR": 77,
+    "reboundingR": 76,
+    "passingR": 3,
+    "blockingR": 63,
+    "stealsR": 1
+    }
+    },
+    {
+    "firstName": "Green",
+    "lastName": "Oberbrunner",
+    "rating": 73,
+    "age": "34yrs",
+    "position": "SG",
+    "height": "187cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 76,
+    "defenseR": 24,
+    "reboundingR": 30,
+    "passingR": 59,
+    "blockingR": 6,
+    "stealsR": 67
+    }
+    },
+    {
+    "firstName": "Emiliano",
+    "lastName": "Anderson",
+    "rating": 72,
+    "age": "24yrs",
+    "position": "PF",
+    "height": "186cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 67,
+    "defenseR": 76,
+    "reboundingR": 81,
+    "passingR": 44,
+    "blockingR": 60,
+    "stealsR": 41
+    }
+    },
+    {
+    "firstName": "Lorine",
+    "lastName": "Schaefer",
+    "rating": 63,
+    "age": "24yrs",
+    "position": "SF",
+    "height": "214cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 70,
+    "defenseR": 45,
+    "reboundingR": 70,
+    "passingR": 57,
+    "blockingR": 5,
+    "stealsR": 47
+    }
+    },
+    {
+    "firstName": "Christophe",
+    "lastName": "Stanton",
+    "rating": 71,
+    "age": "35yrs",
+    "position": "PG",
+    "height": "214cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 65,
+    "defenseR": 27,
+    "reboundingR": 27,
+    "passingR": 76,
+    "blockingR": 7,
+    "stealsR": 76
+    }
+    },
+    {
+    "firstName": "Americo",
+    "lastName": "Ryan",
+    "rating": 67,
+    "age": "24yrs",
+    "position": "C",
+    "height": "190cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 59,
+    "defenseR": 79,
+    "reboundingR": 74,
+    "passingR": 10,
+    "blockingR": 18,
+    "stealsR": 4
+    }
+    },
+    {
+    "firstName": "Margaret",
+    "lastName": "Von",
+    "rating": 63,
+    "age": "35yrs",
+    "position": "SG",
+    "height": "208cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 69,
+    "defenseR": 2,
+    "reboundingR": 22,
+    "passingR": 59,
+    "blockingR": 6,
+    "stealsR": 20
+    }
+    },
+    {
+    "firstName": "Thea",
+    "lastName": "Medhurst",
+    "rating": 70,
+    "age": "32yrs",
+    "position": "PF",
+    "height": "190cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 7,
+    "defenseR": 81,
+    "reboundingR": 76,
+    "passingR": 41,
+    "blockingR": 54,
+    "stealsR": 26
+    }
+    },
+    {
+    "firstName": "Shanna",
+    "lastName": "Waelchi",
+    "rating": 72,
+    "age": "34yrs",
+    "position": "SF",
+    "height": "186cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 74,
+    "defenseR": 66,
+    "reboundingR": 81,
+    "passingR": 2,
+    "blockingR": 9,
+    "stealsR": 11
+    }
+    },
+    {
+    "firstName": "Daphnee",
+    "lastName": "Gulgowski",
+    "rating": 67,
+    "age": "24yrs",
+    "position": "PG",
+    "height": "193cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 68,
+    "defenseR": 6,
+    "reboundingR": 21,
+    "passingR": 68,
+    "blockingR": 34,
+    "stealsR": 21
+    }
+    },
+    {
+    "firstName": "Jarret",
+    "lastName": "Halvorson",
+    "rating": 65,
+    "age": "31yrs",
+    "position": "C",
+    "height": "200cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 18,
+    "defenseR": 79,
+    "reboundingR": 74,
+    "passingR": 13,
+    "blockingR": 17,
+    "stealsR": 7
+    }
+    },
+    {
+    "firstName": "Elena",
+    "lastName": "Rau",
+    "rating": 74,
+    "age": "25yrs",
+    "position": "SG",
+    "height": "207cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 72,
+    "defenseR": 5,
+    "reboundingR": 27,
+    "passingR": 61,
+    "blockingR": 14,
+    "stealsR": 65
+    }
+    },
+    {
+    "firstName": "Pamela",
+    "lastName": "Erdman",
+    "rating": 64,
+    "age": "32yrs",
+    "position": "PF",
+    "height": "199cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 46,
+    "defenseR": 78,
+    "reboundingR": 73,
+    "passingR": 36,
+    "blockingR": 20,
+    "stealsR": 34
+    }
+    },
+    {
+    "firstName": "Brown",
+    "lastName": "O'Keefe",
+    "rating": 67,
+    "age": "29yrs",
+    "position": "SF",
+    "height": "221cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 67,
+    "defenseR": 36,
+    "reboundingR": 142,
+    "passingR": 56,
+    "blockingR": 4,
+    "stealsR": 8
+    }
+    },
+    {
+    "firstName": "Aglae",
+    "lastName": "Green",
+    "rating": 72,
+    "age": "29yrs",
+    "position": "PG",
+    "height": "214cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 78,
+    "defenseR": 27,
+    "reboundingR": 30,
+    "passingR": 71,
+    "blockingR": 6,
+    "stealsR": 75
+    }
+    },
+    {
+    "firstName": "Adrain",
+    "lastName": "VonRueden",
+    "rating": 72,
+    "age": "30yrs",
+    "position": "C",
+    "height": "214cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 63,
+    "defenseR": 80,
+    "reboundingR": 80,
+    "passingR": 7,
+    "blockingR": 51,
+    "stealsR": 34
+    }
+    },
+    {
+    "firstName": "Lavina",
+    "lastName": "Weber",
+    "rating": 66,
+    "age": "30yrs",
+    "position": "SG",
+    "height": "193cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 66,
+    "defenseR": 5,
+    "reboundingR": 19,
+    "passingR": 58,
+    "blockingR": 11,
+    "stealsR": 17
+    }
+    },
+    {
+    "firstName": "Yasmeen",
+    "lastName": "Emmerich",
+    "rating": 61,
+    "age": "33yrs",
+    "position": "PF",
+    "height": "219cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 9,
+    "defenseR": 81,
+    "reboundingR": 75,
+    "passingR": 0,
+    "blockingR": 26,
+    "stealsR": 18
+    }
+    },
+    {
+    "firstName": "Terrence",
+    "lastName": "Emmerich",
+    "rating": 73,
+    "age": "31yrs",
+    "position": "SF",
+    "height": "223cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 77,
+    "defenseR": 72,
+    "reboundingR": 82,
+    "passingR": 68,
+    "blockingR": 33,
+    "stealsR": 29
+    }
+    },
+    {
+    "firstName": "Andres",
+    "lastName": "Torphy",
+    "rating": 69,
+    "age": "32yrs",
+    "position": "PG",
+    "height": "189cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 67,
+    "defenseR": 40,
+    "reboundingR": 15,
+    "passingR": 66,
+    "blockingR": 11,
+    "stealsR": 40
+    }
+    },
+    {
+    "firstName": "Catharine",
+    "lastName": "Schuster",
+    "rating": 71,
+    "age": "29yrs",
+    "position": "C",
+    "height": "191cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 76,
+    "defenseR": 75,
+    "reboundingR": 75,
+    "passingR": 1,
+    "blockingR": 57,
+    "stealsR": 17
+    }
+    },
+    {
+    "firstName": "Desmond",
+    "lastName": "Jones",
+    "rating": 65,
+    "age": "24yrs",
+    "position": "SG",
+    "height": "195cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 68,
+    "defenseR": 12,
+    "reboundingR": 18,
+    "passingR": 56,
+    "blockingR": 3,
+    "stealsR": 3
+    }
+    },
+    {
+    "firstName": "Hertha",
+    "lastName": "Powlowski",
+    "rating": 67,
+    "age": "35yrs",
+    "position": "PF",
+    "height": "207cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 32,
+    "defenseR": 82,
+    "reboundingR": 75,
+    "passingR": 51,
+    "blockingR": 5,
+    "stealsR": 15
+    }
+    },
+    {
+    "firstName": "Richie",
+    "lastName": "Lynch",
+    "rating": 65,
+    "age": "27yrs",
+    "position": "SF",
+    "height": "182cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 68,
+    "defenseR": 37,
+    "reboundingR": 158,
+    "passingR": 57,
+    "blockingR": 19,
+    "stealsR": 17
+    }
+    },
+    {
+    "firstName": "Joel",
+    "lastName": "McKenzie",
+    "rating": 67,
+    "age": "29yrs",
+    "position": "PG",
+    "height": "198cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 66,
+    "defenseR": 16,
+    "reboundingR": 24,
+    "passingR": 65,
+    "blockingR": 17,
+    "stealsR": 50
+    }
+    },
+    {
+    "firstName": "Alene",
+    "lastName": "Daniel",
+    "rating": 71,
+    "age": "32yrs",
+    "position": "C",
+    "height": "191cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 63,
+    "defenseR": 78,
+    "reboundingR": 77,
+    "passingR": 17,
+    "blockingR": 74,
+    "stealsR": 14
+    }
+    },
+    {
+    "firstName": "Sibyl",
+    "lastName": "Okuneva",
+    "rating": 69,
+    "age": "33yrs",
+    "position": "SG",
+    "height": "183cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 66,
+    "defenseR": 18,
+    "reboundingR": 23,
+    "passingR": 56,
+    "blockingR": 27,
+    "stealsR": 23
+    }
+    },
+    {
+    "firstName": "Anastacio",
+    "lastName": "Jacobs",
+    "rating": 68,
+    "age": "30yrs",
+    "position": "PF",
+    "height": "207cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 17,
+    "defenseR": 81,
+    "reboundingR": 75,
+    "passingR": 25,
+    "blockingR": 8,
+    "stealsR": 4
+    }
+    },
+    {
+    "firstName": "Karina",
+    "lastName": "Lesch",
+    "rating": 65,
+    "age": "25yrs",
+    "position": "SF",
+    "height": "206cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 65,
+    "defenseR": 33,
+    "reboundingR": 161,
+    "passingR": 56,
+    "blockingR": 65,
+    "stealsR": 19
+    }
+    },
+    {
+    "firstName": "Kiera",
+    "lastName": "MacGyver",
+    "rating": 71,
+    "age": "29yrs",
+    "position": "PG",
+    "height": "196cm",
+    "teamId": 0,
+    "teamName": "FREE AGENT",
+    "ratingSpec": {
+    "attackR": 77,
+    "defenseR": 4,
+    "reboundingR": 26,
+    "passingR": 78,
+    "blockingR": 9,
+    "stealsR": 71
+    }
+    }
+    ],
+    "gms": [
+    "Shania Upton",
+    "Dameon Huel",
+    "Manuela Kassulke",
+    "Haven Okuneva",
+    "Yesenia Stroman",
+    "Maximus Schmeler",
+    "Katlynn Kunde",
+    "Elnora Stokes",
+    "Anahi Fay",
+    "Amie Stanton",
+    "Archibald Hyatt",
+    "Caden Homenick",
+    "Vivian O'Conner",
+    "Bethel O'Kon",
+    "Sven Schimmel",
+    "Milford Conroy",
+    "Cory Farrell",
+    "Gaetano Langosh",
+    "Will Lehner",
+    "Rowena Torp",
+    "Nickolas Becker",
+    "Lori Boehm",
+    "Austen Bogan",
+    "Nels Hilpert",
+    "Mohammad Langworth",
+    "Evangeline Okuneva",
+    "Cedrick Purdy",
+    "Emmitt Hickle",
+    "Khalil Bailey",
+    "Hudson Wisoky",
+    "Gino Lesch",
+    "Halie Kris",
+    "Flavie MacGyver",
+    "Donato O'Reilly",
+    "Gregorio Lesch",
+    "Johnny Gerhold",
+    "Erik Rogahn",
+    "Sonya Hudson",
+    "Marc Mante",
+    "Tessie Toy",
+    "Eusebio Heidenreich",
+    "Richie Harvey",
+    "Stan Ziemann",
+    "Rosalia Satterfield",
+    "Margarita Gottlieb",
+    "Jody Cummings",
+    "Samson Romaguera",
+    "Moises Kris",
+    "Cornelius Hartmann",
+    "Gwen Koepp",
+    "Hester Brown",
+    "Erica Jenkins",
+    "Davin Gibson",
+    "Gaston Halvorson",
+    "Nakia Ziemann",
+    "Hans Marvin",
+    "Kylie Schoen",
+    "Ruth Mitchell",
+    "Erwin Koss",
+    "Margot Schmidt",
+    "Aida Wintheiser",
+    "Camron Lindgren",
+    "Jorge Terry",
+    "Margot Lowe",
+    "Ernest Walsh",
+    "Franz Schneider",
+    "Wyman Johnston",
+    "Marcelino Botsford",
+    "Lurline Skiles",
+    "Tavares Lindgren",
+    "Laila Hodkiewicz",
+    "Rhett Hane",
+    "Ayla Jacobs",
+    "Chloe Jacobs",
+    "Savion Ryan",
+    "Nico Nitzsche",
+    "Marion Becker",
+    "Orlo Jenkins",
+    "Jorge Sauer",
+    "Herta Emard",
+    "Caden Collier",
+    "Amos Runolfsson",
+    "Dion Price",
+    "Kasey Weissnat",
+    "Layla Bernhard",
+    "Bartholome Auer",
+    "Howard Prosacco",
+    "Petra Okuneva",
+    "Erling Strosin",
+    "Arnulfo Bins",
+    "Pearl Cole",
+    "Wanda Cole",
+    "Guy Maggio",
+    "Jeramy Parker",
+    "Mathilde Zemlak",
+    "Lorena Davis",
+    "Elyse Kovacek",
+    "Elenora Watsica",
+    "Coty Grady",
+    "Dedrick Wisoky"
+    ]
+    }

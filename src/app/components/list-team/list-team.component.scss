@@ -1,0 +1,32 @@
+@import '../../../globals';
+.meta {
+
+  transition: all 0.2s linear;
+  display: block;
+  margin: 10px 0;
+  padding: 5px;
+
+  &:hover {
+    color:$accent
+  }
+}
+.disp{
+
+  .card {
+    height: 40vh;
+    display: none;
+    animation: .3s 0s ease-in growing reverse;
+  }
+  &.showing {
+    .card {
+      height: 40vh;
+      display: block;
+
+      overflow-y: scroll;
+      animation: .3s 0s ease-in growing;
+    }
+  }
+
+}
+
+

@@ -1,0 +1,13 @@
+{
+  "PAGES": {
+    "HOME": {
+      "TITLE": "App works !",
+      "Toggle": "Toggle full screen",
+      "close": "Close League",
+      "switch": "Switch Theme",
+      "about": "About SIMK",
+      "quit": "Quit"
+
+    }
+  }
+}

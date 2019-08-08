@@ -1,0 +1,45 @@
+@import '../globals';
+@import '../mxins';
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  height: 100%;
+
+}
+
+
+
+body {
+
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  position: relative;
+
+
+}
+
+.flex {
+  display: block;
+
+  @include desktop {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+  }
+}
+
+.flexer {
+  display: block;
+
+  @include desktop {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
