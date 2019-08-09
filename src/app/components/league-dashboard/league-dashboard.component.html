@@ -5,7 +5,7 @@
     z-index: 999;" (click)="play()">
     <mat-icon>play_circle_filled</mat-icon>
   </button>
-  <app-selector-league></app-selector-league>
+
   <div *ngIf="LeagueObj" class="league">
     <ng-container *ngIf="!setTeam; else Noteam">
       <div class="teams scrollable" style="overflow-y: scroll">
@@ -30,6 +30,6 @@
 
 
   </div>
-  <app-fixture-dashboard></app-fixture-dashboard>
+
 
 </div>

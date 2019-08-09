@@ -8,8 +8,8 @@ class Fixture {
   boxScore: BoxScores;
 
   constructor(
-    private home: string,
-    private away: string,
+    public home: string,
+    public away: string,
     private veen = 0,
     private played = false
   ) {}
@@ -37,7 +37,6 @@ class Fixture {
     let home = generate(this.home, teams);
     let away = generate(this.away, teams);
 
-
     const hb: BoxScore[] = home.playering(away.ratings);
     const ab: BoxScore[] = away.playering(home.ratings);
 
@@ -58,8 +57,6 @@ class Fixture {
 
     this.played = true;
     this.boxScore = { home: hb, away: ab };
-
-
 
     return;
   }

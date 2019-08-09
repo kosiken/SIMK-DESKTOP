@@ -1,128 +1,23 @@
-
-@import '../../../globals';
-
 .team-full {
+  height: calc(100vh - 45px)
+}
+
+.team-dashboard-full {
   display: grid;
-  grid-template-columns: 45px auto;
-  height:100vh
+  grid-template-columns: auto 40vh;
+  height: 100%;
 }
 
-.teamDashboard {
-  display: grid;
-  grid-template-columns: 300px auto;
-}
-.players-div,.subslist {
-
-  height: 100vh;
-  overflow-y: scroll;
-
-
-  transition: all 0.5s;
-  &::-webkit-scrollbar {
-    width: 15px;
-    background-color: transparent;
-  }
-
-  &::-webkit-scrollbar-track {
-
-
-    background-color: rgba(0, 0, 0, 0);
-  }
-
-  &::-webkit-scrollbar-thumb {
-
-    background-color: rgba(0, 0, 0, 0);
-    border: none;
-  }
-
-  &:hover::-webkit-scrollbar-thumb {
-
-
-    background-color: rgba($color: $gray-600, $alpha: 0.8);
-
-  }
-
-  .title {
-    text-align: center;
-  }
-
-}
-.team-info {
-  padding: 0 0 20px;
-  transition: all 0.5s;
-
-
-
- & > .card-colum {
-
-    display: grid;
-    grid-template-columns: auto auto auto;
-
-    .card {
-      min-width: 300px;
-      background-color: transparent;
-    }
-
-  }
-
-  &.minder {
-    margin-right: calc(0.4 * 100vh);
-
-    & > .card-colum {
-
-
-      grid-template-columns: auto auto
-
-
-
-    }
-
-  }
-}
-.spacing {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 10px 0;
-}
-
-.player-container {
-  width: 400px;
-  max-width: 100%;
-  margin: 0 20px;
-  display: inline-block;
-  vertical-align: top;
-}
-
-.list {
-
-  min-height: 60px;
-
-  border-radius: 4px;
-  display: block;
-  overflow: hidden;
-}
-
-.list-item {
-  padding: 20px 10px;
-
-  box-sizing: border-box;
-  cursor: move;
-  background-color: transparent;
-
-  font-size: 14px;
-}
-
-.list-item:last-child {
-  border: none;
+.players-list {
+  height: 100%
 }
 
 /* Highlight the list item that is being dragged. */
 .cdk-drag-preview {
   border-radius: 4px;
   box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
-  0 8px 10px 1px rgba(0, 0, 0, 0.14),
-  0 3px 14px 2px rgba(0, 0, 0, 0.12);
+    0 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0 3px 14px 2px rgba(0, 0, 0, 0.12);
 }
 
 /* Animate items as they're being sorted. */

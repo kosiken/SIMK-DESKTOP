@@ -53,3 +53,4 @@ Thumbs.db
 /src/app/models/old.ts
 /src/app/models/f
 /src/app/components/league-dashboard/kill
+/src/bootstrap.scss

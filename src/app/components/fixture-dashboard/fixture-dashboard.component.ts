@@ -1,11 +1,10 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 // import {animate, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-fixture-dashboard',
   templateUrl: './fixture-dashboard.component.html',
   styleUrls: ['./fixture-dashboard.component.scss']
-
 })
 export class FixtureDashboardComponent implements OnInit {
   showOps = {
@@ -31,6 +30,11 @@ export class FixtureDashboardComponent implements OnInit {
     this.showOps.comeOut = !this.showOps.comeOut;
   }
   setClass() {
-    return this.showOps;
+    return {
+      wrapper: this.showOps.wrapper,
+      comeOut: this.showOps.comeOut,
+
+      'shadow-t': this.showOps.comeOut
+    };
   }
 }

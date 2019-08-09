@@ -8,7 +8,7 @@ import {
   moveItemInArray,
   transferArrayItem
 } from '@angular/cdk/drag-drop';
-import { Team,  Player } from '../../models';
+import { Team, Player, Fixture, League } from '../../models';
 
 // import  from '../../models/Fixture';
 
@@ -18,15 +18,19 @@ import { Team,  Player } from '../../models';
   styleUrls: ['./team-dashboard.component.scss']
 })
 export class TeamDashboardComponent implements OnInit {
-  private team: Team;
+  team: Team;
   playersDiv = false;
   toTrade: Player[] | string[] = [];
+  fixtures: Fixture[];
 
   constructor(
     private route: ActivatedRoute,
     private io: LeagueService,
     private store: Store<{
-      league: any;
+      league: {
+        league: League;
+        set: boolean;
+      };
     }>,
     private router: Router
   ) {}
@@ -35,17 +39,16 @@ export class TeamDashboardComponent implements OnInit {
     const name = this.route.snapshot.paramMap.get('short');
 
     const self = this;
-    this.store.pipe(map(v => v.league)).subscribe(
-      value => {
-
-        if (value.set) {
-          self.team = value.league.getTeam(name);
-        } else {
-          self.router.
-          console.log(window.location.pathname);
-        }
+    this.store.pipe(map(v => v.league)).subscribe(value => {
+      if (value.set) {
+        self.team = value.league.getTeam(name);
+        self.fixtures = value.league.myFixtures.filter(fix =>
+          self.filter(fix, name, value.league.selectTeam)
+        );
+      } else {
+        self.router.navigate(['/']);
       }
-    );
+    });
   }
 
   drop(event: CdkDragDrop<string[]>) {
@@ -64,5 +67,13 @@ export class TeamDashboardComponent implements OnInit {
       );
     }
     console.log(this.team);
+  }
+
+  private filter(fixture: Fixture, team: string, selectTeam: string) {
+    let ans =
+      (fixture.home === team || fixture.away === team) &&
+      (fixture.home === selectTeam || fixture.away === selectTeam);
+
+    return ans;
   }
 }

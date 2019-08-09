@@ -1,8 +1,30 @@
 <div class="team-full">
-  <p>lol</p>
+
   <div *ngIf="team" class="team-dashboard-full">
     <div class="team-info">
-      <h1 class="heading">Team</h1>
+      <h1 class="heading" style="text-align: center">Team Name</h1>
+
+      <div class="flex">
+        <span class="meta">
+          city
+        </span>
+        <span class="meta">
+          CONFERENCE
+        </span>
+        <span class="meta">
+          division
+        </span>
+        <span class="meta">
+          TEAM RECORD
+        </span>
+
+      </div>
+      <div class="fixtures-list dime card-columns">
+
+
+        <app-fixture *ngFor="let fix of fixtures" [fixture]="fix"></app-fixture>
+
+      </div>
     </div>
     <div class="player-list dime">
       <div class="table players-table">
@@ -15,5 +37,5 @@
     </div>
   </div>
 
-  <app-fixture-dashboard></app-fixture-dashboard>
+ 
 </div>

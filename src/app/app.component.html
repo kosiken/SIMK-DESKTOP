@@ -14,35 +14,49 @@
   position:'absolute',
 
   top: opsPos.y,
-  left: opsPos.x
+  left: opsPos.x,
+      padding: '1px'
 
 
-}" class="list-group dime border">
-      <a class="list-group-item dime light border-0 closer" [routerLink]="['/']"
-        routerLinkActive="router-link-active">{{ 'PAGES.HOME.close' | translate }} <span
-          style="float: right">{{hotKey}}+H</span></a>
+
+}" class="list-group border">
+      <button mat-button class=" btn-0 list-group-item dime light border-0 closer" routerLinkActive="router-link-active"
+        style="width: 100%">{{ 'PAGES.HOME.close' | translate }} <span style="float: right">{{hotKey}}+H</span></button>
 
       <mat-accordion>
         <mat-expansion-panel>
           <mat-expansion-panel-header>
             {{ 'PAGES.HOME.switch' | translate }}
           </mat-expansion-panel-header>
-          <button class="list-group-item dime noBg light border-0" [disabled]="theme.blue"
-            (click)="setTheme('blue', 'white')">Dark(default) <span class="rounded-circle border "
-              style="float: right;width: 20px; height: 20px; background-color: #020811"></span></button>
-          <button class="list-group-item dime noBg light border-0" [disabled]="theme.white"
-            (click)="setTheme('white', 'blue')">Light <span class="rounded-circle border"
-              style="float: right;width: 20px; height: 20px; background-color: #e1f5fe"></span></button>
+          <div style="display: flex; flex-direction: column;">
+            <button mat-button class="list-group-item btn-0 light border-0"
+              (click)="setTheme('blue', 'white')">Dark(default)
+              <span [hidden]="theme.white" style="color: #28a745;">
+                <mat-icon>check</mat-icon>
+              </span>
+              <span class="rounded-circle border "
+                style="float: right;width: 20px; height: 20px; background-color: #020811"></span></button>
+            <button mat-button class="list-group-item btn-0 light border-0" (click)="setTheme('white', 'blue')">Light
+              <span style="color: #28a745;" [hidden]="theme.blue">
+                <mat-icon>check</mat-icon>
+              </span>
+              <span class="rounded-circle border"
+                style="float: right;width: 20px; height: 20px; background-color: #e1f5fe"></span></button>
+          </div>
+
         </mat-expansion-panel>
 
       </mat-accordion>
-
-      <a class="list-group-item dime noBg light border-0 closer"
-        routerLink="about">{{ 'PAGES.HOME.about' | translate }}</a>
-      <a class="list-group-item dime noBg light border-0" (click)="toggleFull()">{{ 'PAGES.HOME.Toggle' | translate }}
-        <span style="float: right">{{hotKey}}+T</span></a>
-      <a class="list-group-item dime noBg light border-0" (click)="closeApp()"> {{ 'PAGES.HOME.quit' | translate }}
-        <span style="float: right">{{hotKey}}+Q</span></a>
+      <div style="display: flex; flex-direction: column;">
+        <button mat-button class="btn-0 list-group-item dime noBg light border-0 closer"
+          routerLink="about">{{ 'PAGES.HOME.about' | translate }}</button>
+        <button mat-button class="btn-0 list-group-item dime noBg light border-0"
+          (click)="toggleFull()">{{ 'PAGES.HOME.Toggle' | translate }}
+          <span style="float: right">{{hotKey}}+T</span></button>
+        <button mat-button class="btn-0 list-group-item dime noBg light border-0" (click)="closeApp()">
+          {{ 'PAGES.HOME.quit' | translate }}
+          <span style="float: right">{{hotKey}}+Q</span></button>
+      </div>
     </div>
 
   </div>
@@ -50,9 +64,10 @@
   <div class="full">
 
 
-    <main>
+    <main style="position: relative;">
 
       <router-outlet></router-outlet>
+      <app-selector-league></app-selector-league>
     </main>
   </div>
 </div>

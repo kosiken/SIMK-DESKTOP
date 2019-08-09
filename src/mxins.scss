@@ -90,6 +90,7 @@ $desktop: 840px;
 
 
 @mixin sclbar($gra, $wi, $ra) {
+  overflow-y: scroll;
 
   &::-webkit-scrollbar {
     width: $wi;
@@ -117,6 +118,7 @@ $desktop: 840px;
   }
 
 }
+
 @mixin themer($bg, $ac, $sp, $bil, $bile) {
   background-color: $bg;
   color: $sp;
@@ -158,16 +160,18 @@ $desktop: 840px;
       border-left: 0.5px solid $sp;
     }
   }
-.gee {
-  -webkit-transition: all 0.2s linear;
-  -moz-transition: all 0.2s linear;
-  transition: all 0.2s linear;
-  &:hover {
-    color: $ac;
-    //border: .2px solid #fff;
-  }
 
-}
+  .gee {
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+
+    &:hover {
+      color: $ac;
+      //border: .2px solid #fff;
+    }
+
+  }
 
 
   .none {
@@ -176,37 +180,10 @@ $desktop: 840px;
 
 
   input[type=text] {
-    @include transition-all();
-    background-color: transparent;
-    border: none;
-    border-radius: 0;
+
+
     color: $ac;
 
-    &:hover {
-      border-bottom: 1px solid $ac;
-      padding: 0.9rem 0.95rem;
-      border-radius: 0;
-
-
-    }
-
-    &:focus {
-      background-color: transparent;
-      border-bottom: 1px solid $sp;
-      padding: 0.375rem 0.75rem;
-      border-radius: 0;
-      box-shadow: none;
-      color: $sp;
-    }
-
-    &:focus-within {
-      background-color: transparent;
-      border-bottom: 1px solid $sp;
-      padding: 0.375rem 0.75rem;
-      border-radius: 0;
-      box-shadow: none;
-      color: $sp;
-    }
 
   }
 
@@ -214,8 +191,12 @@ $desktop: 840px;
     border-bottom: 0.5px solid $sp;
   }
 
+  .border-t {
+    border-top: .2px solid rgba($sp, 0.2);
+  }
+
   .border {
-    border: .2px solid rgba($sp, 0.5);
+    border: .2px solid rgba($sp, 0.2);
   }
 
   .btn {
@@ -232,9 +213,5 @@ $desktop: 840px;
   .list-item {
     color: $sp
   }
-  .scrollable {
-    @include sclbar($bil, 15px, 5px);
-  }
+
 }
-
-

@@ -8,12 +8,7 @@ import * as childProcess from 'child_process';
 
 import * as fs from 'jsonfile';
 
-import { Team, Player, Fixture } from '../models';
-
-interface Apptheme {
-  blue: boolean;
-  white: boolean;
-}
+import { Team, Player, Fixture, AppTheme, IAAState } from '../models';
 
 @Injectable()
 export default class ElectronService {
@@ -152,7 +147,7 @@ export default class ElectronService {
   checkLeagues(): Observable<{ leagues: string[] }> {
     const self = this;
     let promise = new Promise<{ leagues: string[] }>((res, rej) => {
-      window.require('fs').readdir(self.url, (err, data) => {
+      window.require('fs').readdir(self.url, (err, data: string[]) => {
         if (err) {
           if (err.code === 'ENOENT') {
             self.checkInitialize();
@@ -171,7 +166,7 @@ export default class ElectronService {
         }
 
         res({
-          leagues: data
+          leagues: data.filter(f => f !== 'settings.json')
         });
       });
     });
@@ -179,38 +174,52 @@ export default class ElectronService {
     return from(promise);
   }
 
-  getXML(
-    url: string, dir?: boolean
-  ): Observable<{
-    exists?: boolean;
-    count?: number;
-    teams?: Team[];
-    fixtures?: Fixture[];
-    players?: Player[];
-  }> {
+  delLeague(league: string) {
+    const fsi = window.require('fs');
+    let b = this.url + '/' + league;
+
+    let promise = new Promise<{
+      error: boolean;
+      message: string;
+    }>(res => {
+      try {
+        try {
+          fsi.unlinkSync(b + '/league.json');
+        } catch (err) {
+          fsi.rmdirSync(b);
+          res({
+            error: false,
+            message: 'Deleted ' + league
+          });
+        }
+      } catch (err) {
+        console.log(err);
+        res({
+          error: true,
+          message: 'An error occured ' + err.message
+        });
+      }
+    });
+    return from(promise);
+  }
+
+  getXML(url: string, dir?: boolean): Observable<IAAState | AppTheme> {
     this.checkInitialize();
     let b = this.url;
 
     b += '/';
     b += url;
 
-    let promise = new Promise<{
-      exists?: boolean;
-      count?: number;
-      teams?: Team[];
-      fixtures?: Fixture[];
-      players?: Player[];
-    }>((res, rej) => {
-
-      if(dir){
+    let promise = new Promise<IAAState | AppTheme>((res, rej) => {
+      if (dir) {
         const fsi = window.require('fs');
 
-        const  exists = fsi.existsSync(b + '/league.json');
+        const exists = fsi.existsSync(b + '/league.json');
         res({
           exists
-        })
-          return;
-        }
+        });
+        return;
+      }
 
       this.fs.readFile(b, (err, data) => {
         if (err && err.code === 'ENOENT') {
@@ -231,6 +240,27 @@ export default class ElectronService {
       });
     });
 
+    return from(promise);
+  }
+
+  setSettings(
+    theme: AppTheme
+  ): Observable<{
+    saved: boolean;
+  }> {
+    this.checkInitialize();
+    let promise = new Promise<any>((rs, rj) => {
+      this.fs.writeFile(this.url + '/settings.json', theme, err => {
+        if (err) {
+          rj(err);
+          return;
+        } else {
+          rs({
+            saved: true
+          });
+        }
+      });
+    });
     return from(promise);
   }
 }

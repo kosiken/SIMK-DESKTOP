@@ -28,7 +28,7 @@ export class SelectorLeagueComponent implements OnInit {
     return {
       open: this.flashing,
       'bg-secondary': true,
-      'p-4': true
+      'p-5': true
     };
   }
 

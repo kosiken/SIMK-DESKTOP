@@ -1,27 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { WindowService, LeagueService } from './providers';
+import { WindowService, ElectronService } from './providers';
 import { TranslateService } from '@ngx-translate/core';
-import { AppConfig } from '../environments/environment';
-import { Location } from '@angular/common';
+// import { AppConfig } from '../environments/environment';
+// import { Location } from '@angular/common';
 // import {  } from 'rxjs';
 import { Observable, merge, timer, fromEvent } from 'rxjs';
+import { Store, select } from '@ngrx/store';
+
 import { map, debounce } from 'rxjs/operators';
-
-interface Apptheme {
-  blue: boolean;
-  white: boolean;
-  fullScreen: boolean;
-}
-interface Position {
-  x: string;
-  y: string;
-}
-
-interface AppEvents {
-  mouse: Observable<MouseEvent>;
-  keyBoard: Observable<KeyboardEvent>;
-}
-
+import { AppTheme, Position, AppEvents, League } from './models';
+import { newMessage } from './store/actions';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -30,7 +18,7 @@ interface AppEvents {
 export class AppComponent implements OnInit {
   leagues: Array<string>;
   defaultTheme = 'blue';
-  theme: Apptheme = {
+  theme: any = {
     blue: true,
     white: false,
     fullScreen: false
@@ -48,10 +36,16 @@ export class AppComponent implements OnInit {
 
   constructor(
     private translate: TranslateService,
-    private window: WindowService
+    private electronService: ElectronService,
+    private window: WindowService,
+    private store: Store<{
+      league: League;
+      set: boolean;
+      count?: number;
+    }>
   ) {
     translate.setDefaultLang('en');
-   
+
     // if (electronService.isElectron()) {
     //   console.log('Mode electron');
     //   console.log('Electron ipcRenderer', electronService.ipcRenderer);
@@ -68,10 +62,14 @@ export class AppComponent implements OnInit {
     obs.keyBoard.subscribe(($event: KeyboardEvent) =>
       this.onKeyBoardPress($event)
     );
-
+    const self = this
+    this.electronService.getXML('settings.json').subscribe((value: AppTheme ) => {
+      self.theme  = value;
+    });
     this.window.setScreen(this.theme.fullScreen);
     //  this.loadLeagues()
   }
+
 
   setClass() {
     return {
@@ -82,7 +80,33 @@ export class AppComponent implements OnInit {
   }
 
   setTheme(name: string, removing: string) {
-    console.log(name, removing);
+    if(this.theme[name]) {
+      return
+    }
+    this.theme[name] = true;
+    this.theme[removing] = false;
+    const theme = this.theme;
+    const self = this;
+    this.electronService.setSettings(theme).subscribe({
+      next(v) {
+        if (v.saved) {
+          self.store.dispatch(
+            newMessage({
+              error: false,
+              message: 'chenged theme to ' + name + ' and saved settings'
+            })
+          );
+        } else {
+          self.store.dispatch(
+            newMessage({
+              error: false,
+              message: `chenged theme to
+                 ${name} but failed to save settings, please report a bug to kosikenspears@gmail.com if this persists`
+            })
+          );
+        }
+      }
+    });
   }
 
   onKeyPress($event: MouseEvent) {
@@ -114,8 +138,28 @@ export class AppComponent implements OnInit {
   toggleFull() {
     this.theme.fullScreen = !this.theme.fullScreen;
     this.window.setScreen(this.theme.fullScreen);
-    const { theme } = this;
-    // this.electronService.setSettings(theme);
+    const theme = this.theme;
+    const self = this;
+    this.electronService.setSettings(theme).subscribe({
+      next(v) {
+        if (v.saved) {
+          self.store.dispatch(
+            newMessage({
+              error: false,
+              message: 'Toggled full screen'
+            })
+          );
+        } else {
+          self.store.dispatch(
+            newMessage({
+              error: false,
+              message:
+                'Toggled full screen but failed to save settings, please report a bug to kosikenspears@gmail.com if this persists'
+            })
+          );
+        }
+      }
+    });
   }
 
   remOps($event) {

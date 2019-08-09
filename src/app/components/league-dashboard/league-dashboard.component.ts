@@ -7,7 +7,7 @@ import { Store, select } from '@ngrx/store';
 import { loadLeague, newMessage } from '../../store/actions';
 import { Subscription, interval, from } from 'rxjs';
 import { map, debounce, mergeMap, take } from 'rxjs/operators';
-import { League, Fixture } from '../../models';
+import { League, Fixture, IAAState } from '../../models';
 
 interface Settings {
   games: number;
@@ -40,44 +40,40 @@ export class LeagueDashboardComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-
     const name = this.route.snapshot.paramMap.get('name');
     this.league = name;
     const self = this;
-    this.store.pipe(map(value => value.league)).subscribe(
-      leag => {
-        if (leag.set) {
-          self.LeagueObj = leag.league;
-        } else {
-          self.io.checkLeagueExists(name).subscribe(v => {
-            if (!v.exists) {
-              self.io.starts(name).subscribe(ve => {
-                self.LeagueObj = ve;
+    this.store.pipe(map(value => value.league)).subscribe(leag => {
+      if (leag.set) {
+        self.LeagueObj = leag.league;
+      } else {
+        self.io.checkLeagueExists(name).subscribe((v: IAAState) => {
+          if (!v.exists) {
+            self.io.starts(name).subscribe(ve => {
+              self.LeagueObj = ve;
 
-                self.store.dispatch(
-                  loadLeague({
-                    league: ve
-                  })
-                );
-              });
-            } else {
-              self.io.load(name).subscribe(ve => {
-                self.setTeam = ve.selectTeam || '';
+              self.store.dispatch(
+                loadLeague({
+                  league: ve
+                })
+              );
+            });
+          } else {
+            self.io.load(name).subscribe(ve => {
+              self.setTeam = ve.selectTeam || '';
 
-                self.LeagueObj = ve;
+              self.LeagueObj = ve;
 
-                self.store.dispatch(
-                  loadLeague({
-                    league: ve
-                  })
-                );
-              });
-            }
-          });
-        }
+              self.store.dispatch(
+                loadLeague({
+                  league: ve
+                })
+              );
+            });
+          }
+        });
       }
-    );
-
+    });
   }
   selectTeam(shortName: string) {
     this.LeagueObj.selectATeam(shortName);
@@ -89,9 +85,6 @@ export class LeagueDashboardComponent implements OnInit {
     let men = interval(3000).pipe(mergeMap(() => interval(1000)));
     // men.subscribe(console.log);
   }
-
-
-
 
   selectATeam(name) {
     this.LeagueObj.selectATeam(name);
@@ -110,8 +103,6 @@ export class LeagueDashboardComponent implements OnInit {
   doAction(name: string) {
     console.log(name);
   }
-
-
 
   play() {
     if (this.playing) {
@@ -135,7 +126,7 @@ export class LeagueDashboardComponent implements OnInit {
       mergeMap(v => self.delay(v, e))
     );
 
-  this.playSuscription =  obs.subscribe({
+    this.playSuscription = obs.subscribe({
       next(value: { fix: Fixture; n: number }) {
         if (value.fix) {
           value.fix.play(self.LeagueObj.getTeam, self.LeagueObj.teams);

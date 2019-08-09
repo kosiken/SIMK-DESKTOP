@@ -1,6 +1,6 @@
 import ElectronService from './electron.service';
 import { Injectable } from '@angular/core';
-import { League, Player, Team, Util, Fixture } from '../models';
+import { League, Player, Team, Util, Fixture, IAAState } from '../models';
 import { Store, select } from '@ngrx/store';
 import { map, tap } from 'rxjs/operators';
 import flattenDeep from 'lodash/flatMapDeep';
@@ -88,21 +88,16 @@ export default class LeagueService {
       });
   }
 
-  private _log(d: any, error = false) {
-    try {
-      console.log(JSON.parse(d));
-    } catch {
-      this.store.dispatch(
-        newMessage({
-          message: d.toString(),
-          error: false
-        })
-      );
-    }
+  _log(d: any, error = false) {
+    this.store.dispatch(
+      newMessage({
+        message: d.toString(),
+        error: false
+      })
+    );
   }
 
   checkLeagueExists(name: string) {
-
     return this.api.getXML(name, true);
   }
   load(name) {
@@ -111,7 +106,7 @@ export default class LeagueService {
       tap(() => {
         self._log('Loading ' + name + ' 95%');
       }),
-      map(v => {
+      map((v: IAAState) => {
         let players = v.players;
 
         let teams = v.teams;

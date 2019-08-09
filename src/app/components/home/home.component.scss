@@ -1,0 +1,29 @@
+#home {
+  display: grid;
+  grid-template-columns: auto 28vw;
+  height: 100vh;
+
+}
+
+
+.holder {
+  height: 100vh;
+}
+
+.side-nav {
+  height: 100vh;
+}
+
+#delete {
+  position: fixed;
+  bottom: 2vh;
+  left: 3vw;
+  width: 50vw;
+  height: 100px;
+
+  span {
+    position: absolute;
+    bottom: 10px;
+
+  }
+}
