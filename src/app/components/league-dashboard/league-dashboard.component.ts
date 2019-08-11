@@ -1,19 +1,14 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
 // import {TimelineMax, Expo, Elastic} from 'gsap';
-import { LeagueService } from '../../providers';
+import { ElectronService, LeagueService } from '../../providers';
 import { Store, select } from '@ngrx/store';
 import { loadLeague, newMessage } from '../../store/actions';
-import { Subscription, interval, from } from 'rxjs';
-import { map, debounce, mergeMap, take } from 'rxjs/operators';
+import { Subscription, interval, from, Observable } from 'rxjs';
+import { map, debounce, mergeMap, take} from 'rxjs/operators';
 import { League, Fixture, IAAState } from '../../models';
 
-interface Settings {
-  games: number;
-  conferences: number;
-  conferenceNames: string[];
-}
 @Component({
   selector: 'app-league-dashboard',
   templateUrl: './league-dashboard.component.html',
@@ -21,17 +16,25 @@ interface Settings {
 })
 export class LeagueDashboardComponent implements OnInit {
   league: string;
-  settings: Settings;
+
   LeagueObj: League;
   urlTeam = './league-assets/teams.json';
   urlPlayers = './league-assets/players.json';
-  private team = false;
-  protected setTeam: string;
-  private playing = false;
-  private playSuscription: Subscription;
-
+  team = false;
+  setTeam: string;
+  playing = false;
+  playSuscription: Subscription;
+  margin = 0;
+  messages = [
+    {
+      day: 'Info',
+      message: ` Thank you for testing SIMK 😃 you can suggest features by mailing kosikenspears@gmail.com.
+       Please note that SIMK is still in development and some functionality would not work without an internet
+        connection.`
+    }
+  ];
   constructor(
-    // private api: ElectronService,
+    private api: ElectronService,
     private route: ActivatedRoute,
     private io: LeagueService,
     private store: Store<{
@@ -47,23 +50,25 @@ export class LeagueDashboardComponent implements OnInit {
       if (leag.set) {
         self.LeagueObj = leag.league;
       } else {
-        self.io.checkLeagueExists(name).subscribe((v: IAAState) => {
+        self.io.checkLeagueExists(name, self.api).subscribe((v: IAAState) => {
           if (!v.exists) {
-            self.io.starts(name).subscribe(ve => {
-              self.LeagueObj = ve;
+            self.io.starts(name, self.api).subscribe({
+              next(ve) {
+                self.LeagueObj = ve;
 
-              self.store.dispatch(
-                loadLeague({
-                  league: ve
-                })
-              );
+                self.store.dispatch(
+                  loadLeague({
+                    league: ve
+                  })
+                );
+              }
             });
           } else {
-            self.io.load(name).subscribe(ve => {
+            self.io.load(name, self.api).subscribe(ve => {
               self.setTeam = ve.selectTeam || '';
 
               self.LeagueObj = ve;
-
+              self._log('Loaded ' + name);
               self.store.dispatch(
                 loadLeague({
                   league: ve
@@ -75,22 +80,21 @@ export class LeagueDashboardComponent implements OnInit {
       }
     });
   }
+  _log(d: string, error = false) {
+    this.store.dispatch(
+      newMessage({
+        message: d.toString(),
+        error: false
+      })
+    );
+  }
+
   selectTeam(shortName: string) {
     this.LeagueObj.selectATeam(shortName);
     this.setTeam = shortName;
-    this.io.save(this.league, this.LeagueObj);
+    this.io.save(this.league, this.LeagueObj, this.api);
   }
 
-  bite() {
-    let men = interval(3000).pipe(mergeMap(() => interval(1000)));
-    // men.subscribe(console.log);
-  }
-
-  selectATeam(name) {
-    this.LeagueObj.selectATeam(name);
-
-    this.team = true;
-  }
   delay(v, n) {
     let obs = new Promise(resolve => {
       resolve({
@@ -100,11 +104,36 @@ export class LeagueDashboardComponent implements OnInit {
     });
     return from(obs);
   }
-  doAction(name: string) {
-    console.log(name);
+
+  strafeLeft() {
+    if (this.margin < 0) {
+      this.margin += document.getElementById('leo').clientHeight / 30;
+    }
   }
 
-  play() {
+  strafeRight() {
+    let tik = document.getElementById('leo').clientHeight / 30;
+    let tok = this.margin * -1;
+
+    if (tok < tik * 29) {
+      this.margin -= tik;
+    }
+  }
+  playUns() {
+    if (this.playing) {
+      this.playSuscription.unsubscribe();
+    } else {
+      return;
+    }
+    const self = this;
+    self.io
+      .save(self.league, self.LeagueObj, self.api)
+      .subscribe(v => self._log('League saved'));
+
+    self.playing = false;
+  }
+
+  playUntil(f: Fixture) {
     if (this.playing) {
       this.store.dispatch(
         newMessage({
@@ -119,10 +148,11 @@ export class LeagueDashboardComponent implements OnInit {
       this.playSuscription.unsubscribe();
     }
     this.playing = true;
+
     const self = this;
-    let e = this.LeagueObj.playObs();
+    let e = this.LeagueObj.playFixes(f);
     let obs = interval(1500).pipe(
-      take(15),
+      take(e.length + 1),
       mergeMap(v => self.delay(v, e))
     );
 
@@ -130,31 +160,28 @@ export class LeagueDashboardComponent implements OnInit {
       next(value: { fix: Fixture; n: number }) {
         if (value.fix) {
           value.fix.play(self.LeagueObj.getTeam, self.LeagueObj.teams);
+          let bigger = value.fix.score.away > value.fix.score.home;
+          let message = bigger
+            ? `The ${value.fix.away} beat
+           the ${value.fix.home} an away team win with a score of ${
+                value.fix.score.away
+              } to ${value.fix.score.home} oh well`
+            : `The ${value.fix.home} beat ${
+                value.fix.away
+              } a home team win with a score of ${value.fix.score.home}  ${
+                value.fix.score.away
+              }`;
+          self.messages.unshift({
+            day: value.fix.veen,
+            message
+          });
         }
-        console.log(value);
+        // console.log(value, e.length);
 
-        if (value.n > 13) {
-          self.io.save(self.league, self.LeagueObj);
-
-          self.playing = false;
+        if (value.n === e.length) {
+          self.playUns();
         }
       }
     });
   }
 }
-// async saveS() {
-//   this._loading = true;
-//   const { ConfObj, teams, fixtures, players } = this.LeagueObj;
-//   const b = [
-//     { data: ConfObj, url: 'conferences.json' },
-//     { data: fixtures, url: 'fixtures.json' },
-//     { data: teams, url: 'teams.json' },
-//     { data: players, url: 'players.json' }
-//   ];
-
-//   const p = await Promise.all(
-//     b.map(async e => await this.io.save(this._league, e))
-//   );
-//   this._loading = false;
-//   this.flash(p[0] + '👍');
-// }

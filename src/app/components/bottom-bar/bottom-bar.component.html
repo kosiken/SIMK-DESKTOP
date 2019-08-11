@@ -1,6 +1,6 @@
 <div [ngClass]="setClass()">
 
-  <div class="classic special header border-t" style="position: relative;"> <span id="tq"
+  <div class="classic special header " style="position: relative;"> <span id="tq"
       style="width: 45px; height: 45px;font-size:8px ; background-color: transparent;margin-right: 1.5rem"
       (click)="tween()" class="btn rounded-circle ">
       <mat-icon>dashboard</mat-icon>
@@ -10,7 +10,7 @@
   <div class="dimes billy veen">
 
     <div *ngFor="let option of options" class="item special gee">
-      <div (click)="doAction(option.name)" class="card " style="cursor: pointer">
+      <div (click)="doAction(option.id)" class="card " style="cursor: pointer">
         <div class="card-body">
           <h6>{{option.name}}</h6>
           <mat-icon>{{option.icon}}</mat-icon>

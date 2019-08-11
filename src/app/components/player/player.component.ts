@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import Player from '../../models/Player';
+import { Player } from '../../models';
 
 @Component({
   selector: 'app-player',
@@ -8,17 +8,8 @@ import Player from '../../models/Player';
 })
 export class PlayerComponent implements OnInit {
   @Input() Player: Player;
- 
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
-
- 
-
-
+  ngOnInit() {}
 }
-
-

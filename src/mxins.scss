@@ -140,7 +140,8 @@ $desktop: 840px;
 
   }
 
-  .dime {
+  .dime,
+  .mat-expansion-panel {
     background-color: darken($bil, 5%);
   }
 
@@ -188,11 +189,11 @@ $desktop: 840px;
   }
 
   .border-b {
-    border-bottom: 0.5px solid $sp;
+    border-bottom: .2px solid rgba($sp, 0.4);
   }
 
   .border-t {
-    border-top: .2px solid rgba($sp, 0.2);
+    border-top: .2px solid rgba($sp, 0.4);
   }
 
   .border {
@@ -213,5 +214,7 @@ $desktop: 840px;
   .list-item {
     color: $sp
   }
+
+
 
 }

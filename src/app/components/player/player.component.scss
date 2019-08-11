@@ -2,12 +2,12 @@
   padding: 10px 12px 10px 0;
   overflow-x: hidden;
   border-left: none;
-  min-height: 120px;
-  transition: padding .25s;
+
+  transition: padding .25s ease-in;
 
 
   &:hover {
-    padding: 20px 12px 20px 0;
+
     background: rgba($color: #000000, $alpha: 0.4);
   }
 
@@ -44,6 +44,7 @@ h1 {
   position: relative;
   width: 100px;
   height: 100px;
+
   span {
 
     font-size: 12px;

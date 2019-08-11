@@ -1,0 +1,46 @@
+<div style="    position: fixed;
+top: 10px;
+left: 45px;
+width: 100%;">
+
+  <div class="t-r-div">
+    <h5 class="heading">Filter</h5>
+    <ul class="action-list" id="filters">
+      <li *ngFor="let po  of pos " class="border"> <button mat-button (click)="filterBy(po)">{{po}}</button></li>
+    </ul>
+  </div>
+  <div @rising class="container ">
+    <div class="scrollable">
+
+      <table *ngIf="players" class="table">
+        <thead>
+          <tr class="dime">
+            <th>Position </th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>PPG</th>
+            <th>APG</th>
+            <th>RPG</th>
+            <th>Opts</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr class="dime" *ngFor="let player of playersShowing" [hidden]="hidden">
+            <td>{{player.position}}</td>
+            <td>{{player.lastName}}</td>
+            <td>{{player.age}}</td>
+            <td>{{player.stats.PPG|| '0.00'}}</td>
+            <td>{{player.stats.APG||'0.00'}}</td>
+            <td>{{player.stats.RPG||'0.00'}}</td>
+            <td><button mat-button (click)="Trade(player.name)"><span>Trade Finder</span>
+                <mat-icon>search</mat-icon>
+              </button></td>
+          </tr>
+          <!-- <app-player-stat  [player]="player" [filterPlayer]="filtering"></app-player-stat> -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <app-bottom-bar></app-bottom-bar>
+</div>

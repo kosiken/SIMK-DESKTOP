@@ -1,12 +1,28 @@
 @import '../../../globals';
-.shows{
-  display: flex;
+
+.fixture-action {
+  width: 100%;
+  justify-content: space-between;
 }
+
+.mat-card {
+  float: left;
+  width: calc(60vw/3)
+}
+
+.shows {
+  display: flex;
+  z-index: 9999;
+}
+
 .modal {
 
   height: 100vh;
   overflow-y: scroll;
-
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  left: 0;
 
   transition: all 0.5s;
 
@@ -39,10 +55,12 @@
   padding: 1rem;
   flex: 1;
 }
-.score{
-  span{
+
+.score {
+  span {
     margin-right: 5px;
-    &:last-of-type{
+
+    &:last-of-type {
       margin-right: 0;
     }
   }

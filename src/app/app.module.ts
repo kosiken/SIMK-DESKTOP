@@ -18,15 +18,14 @@ import { WebviewDirective } from './directives/webview.directive';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { SelectorLeagueComponent } from './components/selector-league/selector-league.component';
+// import { SelectorLeagueComponent } from './components/selector-league/selector-league.component';
 import { ListTeamComponent } from './components/list-team/list-team.component';
 import { LeagueDashboardComponent } from './components/league-dashboard/league-dashboard.component';
-import { TeamDashboardComponent } from './components/team-dashboard/team-dashboard.component';
-import { FixtureDashboardComponent } from './components/fixture-dashboard/fixture-dashboard.component';
+
 import { PlayerComponent } from './components/player/player.component';
 import { SvgCircleComponent } from './components/svg-circle/svg-circle.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { TeamDashboardNavigatorComponent } from './components/team-dashboard-navigator/team-dashboard-navigator.component';
+import { TeamDashboardComponent } from './components/team-dashboard/team-dashboard.component';
 import { StandingsComponent } from './components/standings/standings.component';
 // import {} from './providers';
 import { AboutComponent } from './pages/about/about.component';
@@ -34,6 +33,11 @@ import { ToolComponent } from './tools/tool/tool.component';
 import { FixtureComponent } from './components/fixture/fixture.component';
 import { StoreModule } from '@ngrx/store';
 import { AppReducers } from './store/reducers';
+import { BottomBarComponent } from './components/bottom-bar/bottom-bar.component';
+import { TeamComponent } from './components/team/team.component';
+import { MessagesComponent } from './components/messages/messages.component';
+import { StatsComponent } from './components/stats/stats.component';
+import { PlayerStatComponent } from './components/player-stat/player-stat.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -45,18 +49,23 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     HomeComponent,
     WebviewDirective,
-    SelectorLeagueComponent,
+
     ListTeamComponent,
     LeagueDashboardComponent,
     TeamDashboardComponent,
-    FixtureDashboardComponent,
+
     PlayerComponent,
     SvgCircleComponent,
-    TeamDashboardNavigatorComponent,
+
     StandingsComponent,
     AboutComponent,
     ToolComponent,
-    FixtureComponent
+    FixtureComponent,
+    BottomBarComponent,
+    TeamComponent,
+    MessagesComponent,
+    StatsComponent,
+    PlayerStatComponent
   ],
   imports: [
     BrowserModule,

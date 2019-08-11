@@ -1,47 +1,66 @@
-<div *ngIf="Team" class="card dime border-light" [id]="Team.teamId">
-  <div class="card-title">
-    {{Team.teamName}}
-  </div>
-  <div class="card-body">
-    <span class="meta">GM: {{Team.GM}}</span>
-    <span class="meta">Coach: {{Team.coach}}</span>
-    <span class="meta">Division: {{Team.division}}</span>
-    <span class="meta">salary: ${{Team.salary}} million </span>
+<div *ngIf="Team" class=" team-list-item dime border-light" [id]="Team.teamId">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        {{Team.teamName}}
+      </mat-card-title>
+      <mat-card-subtitle>{{Team.city}} {{Team.conferenceName}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="card-body">
+        <span class="meta">GM: {{Team.GM}}</span>
+        <span class="meta">Coach: {{Team.coach}}</span>
+        <span class="meta">Division: {{Team.division}}</span>
+        <span class="meta">salary: ${{Team.salary}} million </span>
 
 
-  </div>
-  <button class=" btn link meta" (click)="selectTeam(Team.short)" style="border: none">Continue with {{Team.short}}</button>
-  <button class="btn btn-primary" (click)="toggleModal()">More</button>
-  <div  [ngClass]="setClasses()" (click)="toggleModal()">
-    <div class="flexer">
-      <div class="card accent scrollable dimes" style="margin: 1rem 0 0">
-        <div class="card-header">
-          <h2 class="card-title">
-            {{Team.players[0].firstName}} {{Team.players[0].lastName}} {{Team.players[0].rating}}
-          </h2>
+        <div [ngClass]="setClasses()" (click)="toggleModal()">
+
+          <div class=" accent " style="margin: 1rem 0 0">
+            <div class="card-header">
+              <h2 class="card-title">
+                {{Team.players[0].firstName}} {{Team.players[0].lastName}} {{Team.players[0].rating}}
+              </h2>
+            </div>
+
+            <div class="card-body " style="padding: 1.25rem 0">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Rating</th>
+                    <th>Age</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let player of Team.players">
+                    <td>{{player.lastName}}</td>
+                    <td>{{player.rating}}</td>
+                    <td>{{player.age}}</td>
+
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
         </div>
 
-        <div class="card-body " style="padding: 1.25rem 0">
-          <table class="table">
-            <thead>
-            <tr>
-              <th>Name</th>
-              <th>Rating</th>
-              <th>Age</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr *ngFor="let player of Team.players">
-              <td>{{player.lastName}}</td>
-              <td>{{player.rating}}</td>
-              <td>{{player.age}}</td>
-
-            </tr>
-            </tbody>
-          </table>
-        </div>
       </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button class=" btn-0 link meta" (click)="selectTeam(Team.short)">
+        Continue with
+        {{Team.short}}
+      </button>
+      <button mat-button class="btn-0 btn-primary" (click)="toggleModal()">
 
-    </div>
-  </div>
+        More
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+
+
 </div>

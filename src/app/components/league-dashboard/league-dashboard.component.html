@@ -1,35 +1,77 @@
 <div class="fully">
-  <button class="btn rounded-circle" style="width: 50px; height: 50px; background-color: transparent;position: fixed;
-    top: .5rem;
-    right: 2rem;
-    z-index: 999;" (click)="play()">
-    <mat-icon>play_circle_filled</mat-icon>
-  </button>
 
   <div *ngIf="LeagueObj" class="league">
     <ng-container *ngIf="!setTeam; else Noteam">
-      <div class="teams scrollable" style="overflow-y: scroll">
+      <button (click)="strafeLeft()" class="btn" mat-button style="    position: fixed;
+    top: 45vh;
+    left: 10vw;">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      <button (click)="strafeRight()" class="btn" mat-button style="    position: fixed;
+            top: 45vh;
+           right: 10vw;">
+        <mat-icon>arrow_forward</mat-icon>
+      </button>
+      <div class="flexer">
+        <div class="teams " style="overflow: hidden;
+        width: 50vw;
+        height: 50vh;">
 
-        <div class="card-columns">
 
-          <app-list-team *ngFor="let team  of LeagueObj.teams " [Team]="team" (selectT)="selectTeam($event)">
-          </app-list-team>
+          <div id="leo" [ngStyle]="{'margin-top': margin + 'px', transition:'all .5s ease-in'}">
+            <app-list-team *ngFor="let team  of LeagueObj.teams " [Team]="team" (selectT)="selectTeam($event)">
+            </app-list-team>
+
+          </div>
+
+
+
         </div>
-
-
-
-
       </div>
     </ng-container>
     <ng-template #Noteam>
-      <app-team-dashboard-navigator [team]="LeagueObj.getTeam(setTeam)" [fixtures]="LeagueObj.myFixtures">
-      </app-team-dashboard-navigator>
 
+
+      <button mat-button class="btn rounded-circle" style="width: 50px; height: 50px;position: fixed;
+            top: .5rem;
+            right: 2rem;
+            z-index: 999;" (click)="playUns()">
+        <mat-icon>stop</mat-icon>
+      </button>
+
+      <app-team-dashboard [team]="LeagueObj.getTeam(setTeam)" [messages]="messages" [fixtures]="LeagueObj.myFixtures"
+        (bilde)="playUntil($event)">
+      </app-team-dashboard>
+
+      <app-bottom-bar></app-bottom-bar>
     </ng-template>
 
 
 
   </div>
 
+  <div [hidden]="LeagueObj" class="flexer" style="
 
+      display: flex;
+    align-items: center;
+    justify-content:center;
+    background-color: #020811;
+    height: 100vh
+    ">
+
+    <div class="splash-story" style="position: relative;" [hidden]="LeagueObj">
+
+      <img src="./assets/logo.png" alt="Logo" style="animation: .5s 0s throb infinite">
+      <p style="text-align: center;position: fixed; bottom: 20vh;    left: 25vw;
+    width: 50vw;">
+        Please note that SIMK is still in development and some functionality would not work without an internet
+        connection
+        If the app doesn't load beyond here <a class="link"
+          href="https//github.com/kosiken/SIMK2/bugs/blob/bugs.md">Report here
+        </a>
+      </p>
+    </div>
+
+
+  </div>
 </div>

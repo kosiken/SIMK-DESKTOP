@@ -1,103 +1,59 @@
-
-
 <div style="    position: fixed;
 top: 10px;
 left: 45px;
 width: 100%;">
-<div @rising class="container " >
-  <div [ngClass]="{
+  <div @rising class="container ">
+    <div [ngClass]="{
 none: teamView,
 playe:true
-}"
-  >
-  <div class="toggl border">
-    <button  [ngClass]="{'border-lg': viewing === 'Western', light: true}" (click)="viewing = 'Western'" >Western </button>
-    <button (click)="viewing = 'Eastern'" [ngClass]="{'border-lg': viewing === 'Eastern',  light: true}">Eastern</button>
+}">
+      <div class="toggl border">
+        <button [ngClass]="{'border-lg': viewing === 'Western', light: true}" (click)="viewing = 'Western'">Western
+        </button>
+        <button (click)="viewing = 'Eastern'"
+          [ngClass]="{'border-lg': viewing === 'Eastern',  light: true}">Eastern</button>
 
-  </div>
-<table class="table border">
-  <thead>
-  <tr>
-    <th><mat-icon>flag</mat-icon> Team</th>
-    <th><mat-icon>check_box_outline_blank </mat-icon>Won</th>
-    <th>Lost</th>
-    <th><mat-icon>pie_chart</mat-icon>Record</th>
-    <th>View</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let team of conference[viewing].teams">
-    <td><span class="rounded-circle" [ngStyle]="
+      </div>
+      <table *ngIf="conference" class="table border">
+        <thead>
+          <tr class="dime">
+            <th>
+              <mat-icon>flag</mat-icon> Team
+            </th>
+            <th>
+              <mat-icon>check_box_outline_blank </mat-icon>Won
+            </th>
+            <th>Lost</th>
+            <th>
+              <mat-icon>pie_chart</mat-icon>Record
+            </th>
+            <th>View</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let team of conference[viewing].teams" class="dime">
+            <td><span class="rounded-circle" [ngStyle]="
 {
 'background-color':team.color,
 width: '20px', height: '20px',
     display: 'inline-block'
 
-}" ></span> {{team.teamName}}</td>
-    <td>{{team.gamesPlayed ? team.wonTeams.length : 0}}</td>
-    <td>{{team.gamesPlayed ?team.loseTeams.length: 0}}</td>
-    <td >{{team.gamesPlayed? team.record: '0.00'}}</td>
-    <td (click)="showTeam(team)" style="cursor: pointer"><mat-icon>more</mat-icon></td>
-  </tr>
-  </tbody>
-</table>
-  </div>
-<div [ngClass]="{
-none: !teamView
-}" >
-
-
-
-
-</div>
-</div>
-
-
-  <div *ngIf="selTeam" class="team-full" id={{selTeam.teamId}}>
-
-
-
-
-
-
-    <div class="teamDashboard">
-
-
-      <div class="players-div dime border">
-
-        <div class="table players-table">
-          <h4 class="title" style="padding: 10px 0">Players</h4>
-
-          <app-player *ngFor="let player of selTeam.players" [Player]="player"></app-player>
-
-        </div>
-      </div>
-      <div class="team-info">
-        <button (click)="changeView()">close</button>
-        <h1 class="light">{{selTeam.teamName}}</h1>
-
-        <ul class="unstyled">
-          <li class="light">
-            {{selTeam.GM}}
-          </li>
-
-          <li class="light">
-            {{selTeam.coach}}
-          </li>
-
-          <li class="light">
-            {{selTeam.division}}
-          </li>
-        </ul>
-
-
-      </div>
-
-
+}"></span> {{team.teamName}}</td>
+            <td>{{team.gamesPlayed ? team.wonTeams.length : 0}}</td>
+            <td>{{team.gamesPlayed ?team.loseTeams.length: 0}}</td>
+            <td>{{team.gamesPlayed? team.record: '0.00'}}</td>
+            <td style="cursor: pointer">
+              <a mat-button [routerLink]="['../team/'+team.short]" routerLinkActive="router-link-active">
+                <mat-icon>more</mat-icon>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
-
-
-
   </div>
+
+  <app-bottom-bar></app-bottom-bar>
+
 </div>

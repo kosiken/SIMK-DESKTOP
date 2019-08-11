@@ -1,13 +1,24 @@
-<div class="player">
+<div class="player  border-b">
 
 
 
-  <div class="flex player-item-list border-top " style="border-left: none; border-right: none">
+  <div class="flex player-item-list " style="border-left: none; border-right: none">
 
     <div class="player-position">{{ Player.position}}</div>
     <div class="player-name">{{ Player.lastName}}</div>
     <div class="player-rating">{{Player.firstName}}</div>
 
+
+  </div>
+  <div class="flex">
+
+    <app-svg-circle [radius]="Player.rating" [des]="'rating'"></app-svg-circle>
+
+
+    <app-svg-circle [radius]="Player.rs.attack" [des]="'attack'"></app-svg-circle>
+
+
+    <app-svg-circle [radius]="Player.rs.defense" [des]="'defense'"></app-svg-circle>
 
   </div>
 

@@ -6,9 +6,8 @@ let win: BrowserWindow, serve: boolean, ipc: IpcMain;
 
 const args = process.argv.slice(1);
 serve = args.some(val => val === '--serve');
-
+ipc = ipcMain;
 function createWindow() {
-  ipc = ipcMain;
   const size = {
     width: 1100,
     height: 750
@@ -23,6 +22,7 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true
     },
+    icon: !serve ? path.join(__dirname, 'dist/favicon.png') : undefined,
 
     title: 'SIMK'
   });
@@ -31,7 +31,7 @@ function createWindow() {
     require('electron-reload')(__dirname, {
       electron: require(`${__dirname}/node_modules/electron`)
     });
-    win.loadURL('http://localhost:4200');
+    win.loadURL('http://localhost:5000');
   } else {
     win.loadURL(
       url.format({
@@ -58,7 +58,6 @@ function createWindow() {
     // when you should delete the corresponding element.
     win = null;
   });
-  ipc.on('message', (e, m) => {});
 }
 
 try {
@@ -66,7 +65,9 @@ try {
   // initialization and is ready to create browser windows.
   // Some APIs can only be used after this event occurs.
   app.on('ready', createWindow);
-
+  ipc.on('message', (e: { sender: BrowserWindow }, m) => {
+    e.sender.webContents.toggleDevTools();
+  });
   // Quit when all windows are closed.
   app.on('window-all-closed', () => {
     // On OS X it is common for applications and their menu bar

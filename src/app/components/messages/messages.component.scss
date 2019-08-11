@@ -1,0 +1,21 @@
+#message {
+  //background-color: #29b947;
+  width: 100vw;
+  position: fixed;
+  top: -4vh;
+  right: 2vw;
+  z-index: 999;
+  transition: all 0.3s ease-in;
+  text-align: center;
+  padding: .5rem;
+
+  &.open {
+
+
+
+    top: .5vh;
+
+  }
+
+
+}

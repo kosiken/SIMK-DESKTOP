@@ -32,25 +32,48 @@ $candy-app-dark-theme: mat-dark-theme($candy-app-primary, $candy-app-accent, $ca
 
   .modal {
     background-color: #000913bf;
+    display: none;
+    height: 100vh;
+    width: 100vw;
+
+    &.show {
+      display: block;
+    }
   }
 
   .scrollable {
+    height: 100vh;
     @include sclbar(#1e2b38, 15px, 5px);
+  }
+
+  .mat-cardf {
+    background-color: #26313c;
   }
 
 }
 
 .white {
   @include angular-material-theme($candy-app-light-theme);
-  @include themer($accent-inv, $accent, $sp-in, $white, rgb(232, 231, 228));
+  @include themer($accent-inv, $accent, $sp-in, #f2f8ff, rgb(232, 231, 228));
 
   .modal {
     background-color: #a6ccf7bf;
+    display: none;
+    height: 100vh;
+    width: 100vw;
+
+    &.show {
+      display: block;
+    }
   }
 
   .scrollable {
+    height: 100vh;
     @include sclbar(#5e6c73, 15px, 5px);
   }
 
-  ;
+  .mat-cardf {
+    background-color: #e9f7ff;
+  }
+
 }

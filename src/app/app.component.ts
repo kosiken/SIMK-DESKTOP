@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WindowService, ElectronService } from './providers';
 import { TranslateService } from '@ngx-translate/core';
-// import { AppConfig } from '../environments/environment';
+import { AppConfig } from '../environments/environment';
 // import { Location } from '@angular/common';
 // import {  } from 'rxjs';
 import { Observable, merge, timer, fromEvent } from 'rxjs';
@@ -10,6 +10,7 @@ import { Store, select } from '@ngrx/store';
 import { map, debounce } from 'rxjs/operators';
 import { AppTheme, Position, AppEvents, League } from './models';
 import { newMessage } from './store/actions';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -45,15 +46,23 @@ export class AppComponent implements OnInit {
     }>
   ) {
     translate.setDefaultLang('en');
-
-    // if (electronService.isElectron()) {
-    //   console.log('Mode electron');
-    //   console.log('Electron ipcRenderer', electronService.ipcRenderer);
-    //   console.log('NodeJS childProcess', electronService.childProcess);
-    // } else {
-    //   console.log('Mode web');
-    // }
+    if (AppConfig.production) {
+      this.theme = {
+        blue: true,
+        white: false,
+        fullScreen: true
+      };
+      this.window.setScreen(this.theme.fullScreen);
+    }
   }
+
+  // if (electronService.isElectron()) {
+  //   console.log('Mode electron');
+  //   console.log('Electron ipcRenderer', electronService.ipcRenderer);
+  //   console.log('NodeJS childProcess', electronService.childProcess);
+  // } else {
+  //   console.log('Mode web');
+  // }
 
   ngOnInit() {
     this.hotKey = window.require('is-windows')() ? 'Ctrl' : 'Cmd';
@@ -62,14 +71,15 @@ export class AppComponent implements OnInit {
     obs.keyBoard.subscribe(($event: KeyboardEvent) =>
       this.onKeyBoardPress($event)
     );
-    const self = this
-    this.electronService.getXML('settings.json').subscribe((value: AppTheme ) => {
-      self.theme  = value;
-    });
+    const self = this;
+    this.electronService
+      .getXML('settings.json')
+      .subscribe((value: AppTheme) => {
+        self.theme = value;
+      });
     this.window.setScreen(this.theme.fullScreen);
     //  this.loadLeagues()
   }
-
 
   setClass() {
     return {
@@ -80,13 +90,23 @@ export class AppComponent implements OnInit {
   }
 
   setTheme(name: string, removing: string) {
-    if(this.theme[name]) {
-      return
+    if (this.theme[name]) {
+      return;
     }
     this.theme[name] = true;
     this.theme[removing] = false;
     const theme = this.theme;
     const self = this;
+     this.remOps({
+       target: {
+         id: 'optogg',
+         classList: {
+           contains() {
+             return true;
+           }
+         }
+       }
+     });
     this.electronService.setSettings(theme).subscribe({
       next(v) {
         if (v.saved) {
@@ -140,6 +160,16 @@ export class AppComponent implements OnInit {
     this.window.setScreen(this.theme.fullScreen);
     const theme = this.theme;
     const self = this;
+    this.remOps({
+      target: {
+        id: 'optogg',
+        classList:{
+          contains(){
+            return true
+          }
+        }
+      }
+    });
     this.electronService.setSettings(theme).subscribe({
       next(v) {
         if (v.saved) {
@@ -148,6 +178,7 @@ export class AppComponent implements OnInit {
               error: false,
               message: 'Toggled full screen'
             })
+
           );
         } else {
           self.store.dispatch(
@@ -190,7 +221,27 @@ export class AppComponent implements OnInit {
         case 'q':
           this.closeApp();
           break;
+        case 'D':
+          this.toggDev();
+          break;
+        case 'd':
+          this.toggDev();
+          break;
       }
     }
+  }
+
+  toggDev() {
+     this.remOps({
+       target: {
+         id: 'optogg',
+         classList: {
+           contains() {
+             return true;
+           }
+         }
+       }
+     });
+    this.electronService.toggleDevTools();
   }
 }

@@ -1,7 +1,7 @@
 <div id="home" style="height: 100%">
   <div class="holder container border flexer">
 
-    <mat-card style="box-shadow: none; height: 50vh; width: 40vw;">
+    <mat-card style=" height: 50vh; width: 40vw;" class="mat-cardf">
       <mat-card-header>
         <mat-card-title>Create</mat-card-title>
         <mat-card-subtitle>{{message}}</mat-card-subtitle>
@@ -39,22 +39,15 @@
 
   <div class="side-nav dime scrollable">
 
-
-    <mat-card *ngFor="let league of ls" class="dime border deletable" style="box-shadow: none" draggable="true"
-      (dragstart)="drag(league)">
-      <mat-card-header>
-        <mat-card-title>
+    <div *ngFor="let league of ls" class="list-group-item border-b" (dragstart)="drag(league)" draggable="true">
+      <a mat-button routerLink="league/{{league}}" class=" accent">
+        <span class="heading">
           <mat-icon>dashboard</mat-icon> {{league | uppercase}}
-        </mat-card-title>
-        <mat-card-subtitle>Last Played today </mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        <a routerLink="league/{{league}}" class=" accent">Continue {{league}}</a>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button (click)="_deleteL(league)" class="mat-error">Delete {{league}}</button>
-      </mat-card-actions>
-    </mat-card>
+        </span>
+      </a>
+      <button mat-button (click)="_deleteL(league)" class="btn-error t-r">Delete</button>
+    </div>
+
 
 
   </div>
@@ -62,5 +55,9 @@
     <span id="dels">
       <mat-icon>delete</mat-icon>
     </span>
+    <small id="dels-message">{{deletingMessage}} </small>
+    <small class="del-message">Drag a league here to delete </small>
+
+
   </div>
 </div>

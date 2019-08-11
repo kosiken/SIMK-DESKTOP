@@ -10,13 +10,13 @@ class Fixture {
   constructor(
     public home: string,
     public away: string,
-    private veen = 0,
-    private played = false
+    public veen = 'fix0',
+    public played = false
   ) {}
 
   static fromJSON(fixture: any) {
-    const { h, a, score, boxScore } = fixture,
-      nf = new Fixture(h, a);
+    const { h, a, veen, score, boxScore } = fixture,
+      nf = new Fixture(h, a, veen);
 
     if (score) {
       nf.score = score;

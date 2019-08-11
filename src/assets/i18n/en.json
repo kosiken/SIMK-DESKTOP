@@ -6,7 +6,8 @@
       "close": "Close League",
       "switch": "Switch Theme",
       "about": "About SIMK",
-      "quit": "Quit"
+      "quit": "Quit",
+      "ToggleDev": "Toggle Developer tools"
 
     }
   }

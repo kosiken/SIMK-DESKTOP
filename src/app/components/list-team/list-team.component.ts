@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import {Team} from '../../models';
+import { Team } from '../../models';
 
 @Component({
   selector: 'app-list-team',
@@ -23,9 +23,8 @@ export class ListTeamComponent implements OnInit {
   setClasses() {
     return {
       disp: true,
-      holder: true,
-      showing: this.modal,
-
+      modal: true,
+      show: this.modal
     };
   }
 

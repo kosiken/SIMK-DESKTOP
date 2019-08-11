@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ElectronService, LeagueService } from '../../providers';
 import { Observable, fromEvent } from 'rxjs';
-
+import { Store } from '@ngrx/store';
+import { League, Fixture, IAAState } from '../../models';
+import {newMessage } from '../../store/actions';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -18,15 +20,15 @@ export class HomeComponent implements OnInit {
   message = 'You can name it anything you choose';
   modal: boolean;
   drops$: Observable<Event>;
-
-  constructor(private api: ElectronService, private io: LeagueService) {}
+  deletingMessage: string;
+  constructor(private api: ElectronService,  private store: Store<IAAState> ) {}
 
   ngOnInit() {
     this.drops$ = fromEvent(document.getElementById('delete'), 'drop');
     this.drops$.subscribe(this.drop.bind(this));
     this.api.checkLeagues().subscribe(({ leagues }) => {
       this.ls = leagues;
-      this.leagueName = 'SIMK' + (leagues.length ? leagues.length : '');
+      this.leagueName = 'SIMK' + (leagues.length ? leagues.length + 1 : '');
     });
   }
 
@@ -45,7 +47,14 @@ export class HomeComponent implements OnInit {
     this.message = 'You can name it anything you choose';
     return !this.leagueName;
   }
-
+  _log(d: string, error = false) {
+    this.store.dispatch(
+      newMessage({
+        message: d.toString(),
+        error: false
+      })
+    );
+  }
   createLeague() {
     if (!this.leagueName) {
       this.leagueName = 'newLeague-' + this.ls.length;
@@ -61,7 +70,7 @@ export class HomeComponent implements OnInit {
     this.autosave = !this.autosave;
   }
 
-  doDaThang(e, rem: boolean) {
+  doDaThang(e, rem?: boolean) {
     e.preventDefault();
     if (rem) {
       document.getElementById('dels').classList.remove('mat-error');
@@ -72,9 +81,11 @@ export class HomeComponent implements OnInit {
 
   drag(league: string) {
     this.dragging = league;
+    this.deletingMessage = `You are deleting ${league} this action is irrevocable`;
   }
   drop() {
     if (this.dragging) {
+      document.getElementById('dels').classList.remove('mat-error');
       this._deleteL(this.dragging);
     }
   }
@@ -83,10 +94,10 @@ export class HomeComponent implements OnInit {
     const self = this;
     this.api.delLeague(l).subscribe(v => {
       if (!v.error) {
-        self.io._log(v.message);
+        self._log(v.message);
         self.ls = self.ls.filter(i => i !== l);
       } else {
-        self.io._log(v.message, v.error);
+        self._log(v.message, v.error);
       }
     });
   }

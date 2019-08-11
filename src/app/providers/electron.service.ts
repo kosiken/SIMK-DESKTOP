@@ -10,7 +10,9 @@ import * as fs from 'jsonfile';
 
 import { Team, Player, Fixture, AppTheme, IAAState } from '../models';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export default class ElectronService {
   ipcRenderer: typeof ipcRenderer;
   webFrame: typeof webFrame;
@@ -262,5 +264,8 @@ export default class ElectronService {
       });
     });
     return from(promise);
+  }
+  toggleDevTools(){
+    this.ipcRenderer.send('message', 'toggle')
   }
 }

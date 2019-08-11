@@ -1,41 +1,67 @@
-<div class="team-full">
+<div class="team-dashboard skip scrollable ">
+  <!-- <div class="header p-3">
+    <h3 class="heading">{{team.teamName}}</h3>
+  </div> -->
 
-  <div *ngIf="team" class="team-dashboard-full">
-    <div class="team-info">
-      <h1 class="heading" style="text-align: center">Team Name</h1>
-
-      <div class="flex">
-        <span class="meta">
-          city
-        </span>
-        <span class="meta">
-          CONFERENCE
-        </span>
-        <span class="meta">
-          division
-        </span>
-        <span class="meta">
-          TEAM RECORD
-        </span>
-
-      </div>
-      <div class="fixtures-list dime card-columns">
+  <button mat-button class="btn rounded-circle" style="width: 50px; height: 50px;position: fixed;
+              top: .5rem;
+              right: 5rem;
+              z-index: 999;" (click)="play()">
+    <mat-icon>play_circle_filled</mat-icon>
+  </button>
+  <div class="desk ">
+    <div class="news  border scrollable">
+      <div class="list-group " style="height: 100vh">
+        <div *ngFor="let m of messages" class="list-group-item border-t" style="padding:1rem">
+          <h4 class="heading">Day {{m.day}} </h4>
+          <!-- <mat-icon color="primary" matBadge="Me" matBadgePosition="above after" matBadgeColor="accent">
+            star
 
 
-        <app-fixture *ngFor="let fix of fixtures" [fixture]="fix"></app-fixture>
+
+
+          </mat-icon> -->
+          <span>
+            <mat-icon>perm_contact_calendar</mat-icon>
+          </span>
+
+          <div class="news-item ">
+            <div class="card-body special">
+              <p class="card-text">
+                {{m.message}}
+
+
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+
+
 
       </div>
     </div>
-    <div class="player-list dime">
-      <div class="table players-table">
-        <h4 class="title" style="padding: 10px 0">Players</h4>
+    <div class="activities">
+      <div class="front-office">
+        <div class="card ">
+          <div class="card-header">
+            <h2 class="text-success">
+              {{team.teamName}}
+              <!-- <app-svg-circle [radius]="99"></app-svg-circle> -->
+            </h2>
 
-        <app-player *ngFor="let player of team.players" [Player]="player"></app-player>
+
+          </div>
+        </div>
+      </div>
+      <div class="calender scrollable border" style="text-align: center">
+
+        <app-fixture *ngFor="let fix of fixtures" [fixture]="fix" (bild)="playUntil($event)"></app-fixture>
+
 
       </div>
 
     </div>
   </div>
-
- 
 </div>

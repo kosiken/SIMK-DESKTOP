@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import Fixture from '../../models/Fixture';
+
 @Component({
   selector: 'app-fixture',
   templateUrl: './fixture.component.html',
@@ -7,11 +8,15 @@ import Fixture from '../../models/Fixture';
 })
 export class FixtureComponent implements OnInit {
   @Input() fixture: Fixture;
+  @Output() bild: EventEmitter<Fixture> = new EventEmitter();
   mode = false;
+  location: string;
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.location = `?location=${window.location.pathname}`;
+  }
 
   setClass() {
     return {
@@ -20,14 +25,13 @@ export class FixtureComponent implements OnInit {
     };
   }
 
-
   gitIt(num: number) {
     let ans;
     if (this.fixture.score) {
-      ans = (this.fixture.score.home > this.fixture.score.away );
+      ans = this.fixture.score.home > this.fixture.score.away;
       if (num < 1) {
         return {
-          'text-success':  ans,
+          'text-success': ans,
           'text-danger': !ans
         };
       } else {
@@ -41,6 +45,9 @@ export class FixtureComponent implements OnInit {
         span: true
       };
     }
+  }
 
+  emitClick(f: Fixture) {
+    this.bild.emit(f);
   }
 }

@@ -1,6 +1,7 @@
-<div [ngClass]="setClass()" style="overflow-y: hidden;">
+<div [ngClass]="setClass()" style="overflow-y: hidden">
 
-  <div class="overlay" id="optogg" style="  width: 100vw;
+  <div id="SIMK" style="background: url('./assets/logo.png') no-repeat center">
+    <div class="overlay" id="optogg" style="  width: 100vw;
     height: 100vh;
     background-color: transparent;
     position: fixed;
@@ -9,7 +10,7 @@
     z-index: 99999;" [hidden]="showOps" (click)="remOps($event)">
 
 
-    <div id="pos" [ngStyle]="
+      <div id="pos" [ngStyle]="
 {
   position:'absolute',
 
@@ -20,54 +21,59 @@
 
 
 }" class="list-group border">
-      <button mat-button class=" btn-0 list-group-item dime light border-0 closer" routerLinkActive="router-link-active"
-        style="width: 100%">{{ 'PAGES.HOME.close' | translate }} <span style="float: right">{{hotKey}}+H</span></button>
+        <button mat-button class=" btn-0 list-group-item dime light border-0 closer"
+          routerLinkActive="router-link-active" style="width: 100%">{{ 'PAGES.HOME.close' | translate }} <span
+            style="float: right">{{hotKey}}+H</span></button>
 
-      <mat-accordion>
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            {{ 'PAGES.HOME.switch' | translate }}
-          </mat-expansion-panel-header>
-          <div style="display: flex; flex-direction: column;">
-            <button mat-button class="list-group-item btn-0 light border-0"
-              (click)="setTheme('blue', 'white')">Dark(default)
-              <span [hidden]="theme.white" style="color: #28a745;">
-                <mat-icon>check</mat-icon>
-              </span>
-              <span class="rounded-circle border "
-                style="float: right;width: 20px; height: 20px; background-color: #020811"></span></button>
-            <button mat-button class="list-group-item btn-0 light border-0" (click)="setTheme('white', 'blue')">Light
-              <span style="color: #28a745;" [hidden]="theme.blue">
-                <mat-icon>check</mat-icon>
-              </span>
-              <span class="rounded-circle border"
-                style="float: right;width: 20px; height: 20px; background-color: #e1f5fe"></span></button>
-          </div>
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              {{ 'PAGES.HOME.switch' | translate }}
+            </mat-expansion-panel-header>
+            <div style="display: flex; flex-direction: column;">
+              <button mat-button class="list-group-item btn-0 light border-0"
+                (click)="setTheme('blue', 'white')">Dark(default)
+                <span [hidden]="theme.white" style="color: #28a745;">
+                  <mat-icon>check</mat-icon>
+                </span>
+                <span class="rounded-circle border "
+                  style="float: right;width: 20px; height: 20px; background-color: #020811;margin-top:8px"></span></button>
+              <button mat-button class="list-group-item btn-0 light border-0" (click)="setTheme('white', 'blue')">Light
+                <span style="color: #28a745;" [hidden]="theme.blue">
+                  <mat-icon>check</mat-icon>
+                </span>
+                <span class="rounded-circle border"
+                  style="float: right;width: 20px; height: 20px; background-color: #e1f5fe;margin-top:8px"></span></button>
+            </div>
 
-        </mat-expansion-panel>
+          </mat-expansion-panel>
 
-      </mat-accordion>
-      <div style="display: flex; flex-direction: column;">
-        <button mat-button class="btn-0 list-group-item dime noBg light border-0 closer"
-          routerLink="about">{{ 'PAGES.HOME.about' | translate }}</button>
-        <button mat-button class="btn-0 list-group-item dime noBg light border-0"
-          (click)="toggleFull()">{{ 'PAGES.HOME.Toggle' | translate }}
-          <span style="float: right">{{hotKey}}+T</span></button>
-        <button mat-button class="btn-0 list-group-item dime noBg light border-0" (click)="closeApp()">
-          {{ 'PAGES.HOME.quit' | translate }}
-          <span style="float: right">{{hotKey}}+Q</span></button>
+        </mat-accordion>
+        <div style="display: flex; flex-direction: column;">
+          <button mat-button class="btn-0 list-group-item dime noBg light border-0 closer"
+            routerLink="about">{{ 'PAGES.HOME.about' | translate }}</button>
+          <button mat-button class="btn-0 list-group-item dime noBg light border-0"
+            (click)="toggleFull()">{{ 'PAGES.HOME.Toggle' | translate }}
+            <span style="float: right">{{hotKey}}+T</span></button>
+              <button mat-button class="btn-0 list-group-item dime noBg light border-0"
+                (click)="toggDev()">{{ 'PAGES.HOME.ToggleDev' | translate }}
+                <span style="float: right">{{hotKey}}+D</span></button>
+          <button mat-button class="btn-0 list-group-item dime noBg light border-0" (click)="closeApp()">
+            {{ 'PAGES.HOME.quit' | translate }}
+            <span style="float: right">{{hotKey}}+Q</span></button>
+        </div>
       </div>
+
     </div>
 
-  </div>
-
-  <div class="full">
+    <div class="full">
 
 
-    <main style="position: relative;">
+      <main style="position: relative;">
 
-      <router-outlet></router-outlet>
-      <app-selector-league></app-selector-league>
-    </main>
+        <router-outlet></router-outlet>
+        <app-messages></app-messages>
+      </main>
+    </div>
   </div>
 </div>

@@ -1,5 +1,6 @@
+import { Action } from '@ngrx/store';
 // import {  } from '@ngrx/store';
-import { League } from '../../models/index';
+
 import { createReducer, on } from '@ngrx/store';
 import { createLeague, playFixture, loadLeague } from '../actions';
 // import { environment } from '../../../environments/environment';
@@ -7,7 +8,7 @@ import { ILState } from '../simk.states';
 
 const initialState: ILState = { set: false };
 
-export const LeagueReducer = createReducer(
+const LeagueReduc = createReducer(
   initialState,
   on(createLeague, (state, l) => ({
     set: true,
@@ -20,3 +21,7 @@ export const LeagueReducer = createReducer(
     return state;
   })
 );
+
+export function LeagueReducer(state: ILState, action: Action) {
+  return LeagueReduc(state, action);
+}

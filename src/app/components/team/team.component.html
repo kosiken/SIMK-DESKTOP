@@ -1,0 +1,41 @@
+<div class="team-full">
+
+  <div *ngIf="team" class="team-dashboard-full">
+    <div class="team-info dime">
+      <h1 class="heading" style="text-align: center">Team Name</h1>
+
+      <div class="flex">
+        <span class="meta">
+          city
+        </span>
+        <span class="meta">
+          CONFERENCE
+        </span>
+        <span class="meta">
+          division
+        </span>
+        <span class="meta">
+          TEAM RECORD
+        </span>
+
+      </div>
+      <div class="fixtures-list dime card-columns scrollable" style="flex-wrap: wrap">
+
+
+        <app-fixture *ngFor="let fix of fixtures" [fixture]="fix"></app-fixture>
+
+      </div>
+    </div>
+    <div class="player-list dime scrollable">
+      <div class="table players-table">
+        <h4 class="title" style="padding: 10px 0">Players</h4>
+
+        <app-player *ngFor="let player of team.players" [Player]="player"></app-player>
+
+      </div>
+
+    </div>
+  </div>
+
+  <app-bottom-bar></app-bottom-bar>
+</div>

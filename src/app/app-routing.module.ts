@@ -1,10 +1,12 @@
+import { StatsComponent } from './components/stats/stats.component';
+import { StandingsComponent } from './components/standings/standings.component';
 // import { PlayerComponent } from './components/player/player.component';
-import { TeamDashboardComponent } from './components/team-dashboard/team-dashboard.component';
+import { TeamComponent } from './components/team/team.component';
 import { HomeComponent } from './components/home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LeagueDashboardComponent } from './components/league-dashboard/league-dashboard.component';
-import {AboutComponent} from './pages/about/about.component';
+import { AboutComponent } from './pages/about/about.component';
 
 // import {SelectorLeagueComponent} from './components/selector-league/selector-league.component';
 
@@ -20,12 +22,15 @@ const routes: Routes = [
 
   {
     path: 'team/:short',
-    component: TeamDashboardComponent
+    component: TeamComponent
   },
-
   {
-    path: 'about',
-    component: AboutComponent
+    path: 'stands',
+    component: StandingsComponent
+  },
+  {
+    path: 'stats',
+    component: StatsComponent
   }
 ];
 

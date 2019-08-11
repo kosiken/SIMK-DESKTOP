@@ -1,4 +1,17 @@
 @import '../../../globals';
+
+.team-list-item {
+  display: block;
+  height: 50vh;
+
+  .mat-card {
+    height: 50vh;
+  }
+
+
+
+}
+
 .meta {
 
   transition: all 0.2s linear;
@@ -7,16 +20,18 @@
   padding: 5px;
 
   &:hover {
-    color:$accent
+    color: $accent
   }
 }
-.disp{
+
+.disp {
 
   .card {
     height: 40vh;
     display: none;
     animation: .3s 0s ease-in growing reverse;
   }
+
   &.showing {
     .card {
       height: 40vh;
@@ -29,4 +44,8 @@
 
 }
 
-
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0
+}
