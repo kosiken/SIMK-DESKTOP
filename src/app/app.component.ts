@@ -74,8 +74,10 @@ export class AppComponent implements OnInit {
     const self = this;
     this.electronService
       .getXML('settings.json')
-      .subscribe((value: AppTheme) => {
-        self.theme = value;
+      .subscribe((value: any) => {
+      	if(!value.useDefault){
+      	
+      	        self.theme = value;}
       });
     this.window.setScreen(this.theme.fullScreen);
     //  this.loadLeagues()

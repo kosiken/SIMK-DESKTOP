@@ -14,6 +14,7 @@ interface AppTheme {
   blue: boolean;
   white: boolean;
   fullScreen: boolean;
+
 }
 interface Position {
   x: string;
@@ -25,6 +26,7 @@ interface AppEvents {
   keyBoard: Observable<KeyboardEvent>;
 }
 interface IAAState{
+   useDefault?: boolean;
     exists?: boolean;
     count?: number;
     teams?: Team[];

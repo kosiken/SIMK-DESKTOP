@@ -225,9 +225,16 @@ export default class ElectronService {
 
       this.fs.readFile(b, (err, data) => {
         if (err && err.code === 'ENOENT') {
-          res({
+          if(url === 'settings.json'){
+            res({
+            useDefault: true
+          });
+          }
+        else{
+           res({
             exists: false
           });
+        } 
           return;
         } else if (!data && err) {
           console.log(err);
