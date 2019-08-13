@@ -15,8 +15,8 @@ describe('angular-electron App', function () {
   });
 
   it('should display message saying App works !', async function () {
-    const text = await browser.getText('app-home h1');
-    expect(text).to.equal('App works !');
+    const text = await browser.getText('mat-card-subtitle.mat-card-subtitle');
+    expect(text).to.equal('You can name it anything you choose');
   });
 
 
