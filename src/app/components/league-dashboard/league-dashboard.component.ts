@@ -6,7 +6,7 @@ import { ElectronService, LeagueService } from '../../providers';
 import { Store, select } from '@ngrx/store';
 import { loadLeague, newMessage } from '../../store/actions';
 import { Subscription, interval, from, Observable } from 'rxjs';
-import { map, debounce, mergeMap, take} from 'rxjs/operators';
+import { map, debounce, mergeMap, take } from 'rxjs/operators';
 import { League, Fixture, IAAState } from '../../models';
 
 @Component({
@@ -80,7 +80,7 @@ export class LeagueDashboardComponent implements OnInit {
       }
     });
   }
-  _log(d: string, error = false) {
+  _log(d: string) {
     this.store.dispatch(
       newMessage({
         message: d.toString(),

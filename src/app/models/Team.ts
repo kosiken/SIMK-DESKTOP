@@ -76,10 +76,10 @@ class Team {
       nT.loseTeams = loseTeams;
       nT.done = gamesPlayed > 81;
       nT.record = (wonTeams.length / gamesPlayed).toFixed(3);
-    }  else {
-      nT.gamesPlayed = 0
-      nT.wonTeams = [],
-        nT.loseTeams = []
+    } else {
+      nT.gamesPlayed = 0;
+      nT.wonTeams = [];
+      nT.loseTeams = [];
     }
 
     return nT;
@@ -149,7 +149,6 @@ class Team {
     return this.players.find(pl => pl.firstName + pl.lastName === playerName);
   }
   win(t: Team): void {
-
     this.wonTeams.unshift(t.short);
     this.gamesPlayed++;
     this.update();
@@ -301,7 +300,11 @@ function setP(
   const bench = ben.sort((a, b) => b.rating - a.rating).slice(0, 5);
   // tslint:disable-next-line: one-variable-per-declaration
   const srating = players.map(p => p.rating).reduce((n, o) => n + o),
-    brating = bench.sort((a, b) => b.rating - a.rating).slice(0, 5).map(p => p.rating).reduce((n, o) => n + o);
+    brating = bench
+      .sort((a, b) => b.rating - a.rating)
+      .slice(0, 5)
+      .map(p => p.rating)
+      .reduce((n, o) => n + o);
 
   for (let player of players) {
     player.addMins = (player.rating / srating) * smin;

@@ -64,7 +64,7 @@ export class BottomBarComponent implements OnInit {
       });
     } else if (n === 1) {
       self.router.navigate(['stands']);
-    } else if(n==2) {
+    } else if (n === 2) {
       self.router.navigate(['stats']);
     }
   }

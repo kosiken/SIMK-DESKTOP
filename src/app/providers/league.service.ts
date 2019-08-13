@@ -1,23 +1,21 @@
-import { ConferenceObj } from './../models/Rating';
+import { newMessage } from '../store/actions';
 import ElectronService from './electron.service';
 import { Injectable } from '@angular/core';
 import { League, Player, Team, Util, Fixture, IAAState } from '../models';
 import { Store } from '@ngrx/store';
 import { map, tap } from 'rxjs/operators';
 
-
-
 //
 
 @Injectable()
 export default class LeagueService {
- 
-private util: Util;
-
-  constructor() {
-this.util = new Util()
-   
-  }
+  constructor(
+    private util: Util,
+    private store: Store<{
+      league: any;
+      messages: string[];
+    }>
+  ) {}
 
   private isElectron() {
     return window && window.process && window.process.type;
@@ -54,7 +52,7 @@ this.util = new Util()
         nL.doColors();
         nL.redoFixtures();
         console.log(nL);
-        self.save(name, nL, api).subscribe(v=> console.log(v));
+        self.save(name, nL, api).subscribe(value => self._log('saved ' + name));
         return nL;
       })
     );
@@ -62,17 +60,15 @@ this.util = new Util()
 
   save(name: string, data: League, api: ElectronService) {
     let self = this;
-   let obs = api
-      .save(name, {
-        teams: data.teams,
-        fixtures: self._flattenDeep(data.fixtureMap),
-        players: data.players,
-        count: data.count
-      })
-      
-      return obs
-  }
+    let obs = api.save(name, {
+      teams: data.teams,
+      fixtures: self._flattenDeep(data.fixtureMap),
+      players: data.players,
+      count: data.count
+    });
 
+    return obs;
+  }
 
   checkLeagueExists(name: string, api: ElectronService) {
     return api.getXML(name, true);
@@ -102,7 +98,7 @@ this.util = new Util()
         nL.teams = teams;
         nL.players = players;
         nL.fixtures = fixtures;
-      //  self._log('Loaded ' + name + ' ' + new Date(Date.now()).toString());
+        //  self._log('Loaded ' + name + ' ' + new Date(Date.now()).toString());
 
         nL.doColors();
         nL.redoFixtures();
@@ -113,11 +109,18 @@ this.util = new Util()
 
     return obs;
   }
-
+  private _log(d: string) {
+    this.store.dispatch(
+      newMessage({
+        message: d.toString(),
+        error: false
+      })
+    );
+  }
   private _flattenDeep(arr: Array<Fixture[]>): Fixture[] {
-    function strller(arr) {
+    function strller(array) {
       let strlled = [];
-      for (let i of arr) {
+      for (let i of array) {
         if (Array.isArray(i)) {
           let sub = strller(i);
           strlled = strlled.concat(sub);

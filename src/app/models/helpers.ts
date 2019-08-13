@@ -81,7 +81,7 @@ export const ass = (key, i, arr, confMap) => {
 
 export const finallyPopulateFixtureArray = (f: Fixture[], rear = true) => {
   let fixturesRearranged: Fixture[] = rear ? rearrange(2, f) : f;
-  fixturesRearranged.forEach((f, n)=> f.veen = 'fix'+n )
+  fixturesRearranged.forEach((fix, n) => (fix.veen = 'fix' + n));
 
   const fixturesList: Array<Fixture[]> = [];
   let last = 0;

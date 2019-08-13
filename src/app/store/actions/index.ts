@@ -1,4 +1,4 @@
-import {createLeague, playFixture, loadLeague} from './league.action';
-import {newMessage} from './message.actions';
+import { createLeague, playFixture, loadLeague } from './league.action';
+import { newMessage } from './message.actions';
 
-export {createLeague, playFixture, loadLeague, newMessage}
+export { createLeague, playFixture, loadLeague, newMessage };

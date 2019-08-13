@@ -1,6 +1,3 @@
-//import { ElectronService } from '../electron.service';
-// "use strict";
-
 import Player from './Player';
 import Team from './Team';
 import Fixture from './Fixture';
@@ -36,7 +33,7 @@ export default class Util {
   generateFixtures(teamConferenceObject: {
     Western: Conference;
     Eastern: Conference;
-  }){
+  }) {
     const { Western: west, Eastern: east } = teamConferenceObject;
     let fixturesArray = [];
     const confMap = Object.create(null);
@@ -48,10 +45,9 @@ export default class Util {
       putIt(team, teams, confMap);
     });
 
-
     Object.keys(confMap).forEach((key, i, arr) => ass(key, i, arr, confMap));
-    build([west.teams, east.teams], confMap, fixturesArray, );
-    build2([west.teams, east.teams], fixturesArray, );
+    build([west.teams, east.teams], confMap, fixturesArray);
+    build2([west.teams, east.teams], fixturesArray);
 
     return finallyPopulateFixtureArray(fixturesArray);
   }

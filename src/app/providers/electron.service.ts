@@ -35,9 +35,9 @@ export default class ElectronService {
     }
   }
 
-  isElectron = () => {
+  isElectron() {
     return window && window.process && window.process.type;
-  };
+  }
 
   get(url, exact?): Promise<any> {
     return new Promise((resolve, reject) => {
@@ -225,16 +225,15 @@ export default class ElectronService {
 
       this.fs.readFile(b, (err, data) => {
         if (err && err.code === 'ENOENT') {
-          if(url === 'settings.json'){
+          if (url === 'settings.json') {
             res({
-            useDefault: true
-          });
+              useDefault: true
+            });
+          } else {
+            res({
+              exists: false
+            });
           }
-        else{
-           res({
-            exists: false
-          });
-        } 
           return;
         } else if (!data && err) {
           console.log(err);
@@ -272,7 +271,7 @@ export default class ElectronService {
     });
     return from(promise);
   }
-  toggleDevTools(){
-    this.ipcRenderer.send('message', 'toggle')
+  toggleDevTools() {
+    this.ipcRenderer.send('message', 'toggle');
   }
 }

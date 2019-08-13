@@ -11,9 +11,9 @@ export default class WindowService {
     }
   }
 
-  isElectron = () => {
+  private isElectron() {
     return window && window.process && window.process.type;
-  };
+  }
   closeView() {
     this.window.close();
   }

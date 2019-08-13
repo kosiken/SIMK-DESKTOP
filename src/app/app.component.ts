@@ -72,13 +72,11 @@ export class AppComponent implements OnInit {
       this.onKeyBoardPress($event)
     );
     const self = this;
-    this.electronService
-      .getXML('settings.json')
-      .subscribe((value: any) => {
-      	if(!value.useDefault){
-      	
-      	        self.theme = value;}
-      });
+    this.electronService.getXML('settings.json').subscribe((value: any) => {
+      if (!value.useDefault) {
+        self.theme = value;
+      }
+    });
     this.window.setScreen(this.theme.fullScreen);
     //  this.loadLeagues()
   }
@@ -99,16 +97,16 @@ export class AppComponent implements OnInit {
     this.theme[removing] = false;
     const theme = this.theme;
     const self = this;
-     this.remOps({
-       target: {
-         id: 'optogg',
-         classList: {
-           contains() {
-             return true;
-           }
-         }
-       }
-     });
+    this.remOps({
+      target: {
+        id: 'optogg',
+        classList: {
+          contains() {
+            return true;
+          }
+        }
+      }
+    });
     this.electronService.setSettings(theme).subscribe({
       next(v) {
         if (v.saved) {
@@ -165,9 +163,9 @@ export class AppComponent implements OnInit {
     this.remOps({
       target: {
         id: 'optogg',
-        classList:{
-          contains(){
-            return true
+        classList: {
+          contains() {
+            return true;
           }
         }
       }
@@ -180,7 +178,6 @@ export class AppComponent implements OnInit {
               error: false,
               message: 'Toggled full screen'
             })
-
           );
         } else {
           self.store.dispatch(
@@ -234,16 +231,16 @@ export class AppComponent implements OnInit {
   }
 
   toggDev() {
-     this.remOps({
-       target: {
-         id: 'optogg',
-         classList: {
-           contains() {
-             return true;
-           }
-         }
-       }
-     });
+    this.remOps({
+      target: {
+        id: 'optogg',
+        classList: {
+          contains() {
+            return true;
+          }
+        }
+      }
+    });
     this.electronService.toggleDevTools();
   }
 }

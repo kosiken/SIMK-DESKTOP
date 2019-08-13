@@ -14,7 +14,6 @@ interface AppTheme {
   blue: boolean;
   white: boolean;
   fullScreen: boolean;
-
 }
 interface Position {
   x: string;
@@ -25,14 +24,14 @@ interface AppEvents {
   mouse: Observable<MouseEvent>;
   keyBoard: Observable<KeyboardEvent>;
 }
-interface IAAState{
-   useDefault?: boolean;
-    exists?: boolean;
-    count?: number;
-    teams?: Team[];
-    fixtures?: Fixture[];
-    players?: Player[];
-  }
+interface IAAState {
+  useDefault?: boolean;
+  exists?: boolean;
+  count?: number;
+  teams?: Team[];
+  fixtures?: Fixture[];
+  players?: Player[];
+}
 export {
   Team,
   Player,

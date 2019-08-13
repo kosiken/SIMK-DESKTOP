@@ -26,7 +26,7 @@ import { Router } from '@angular/router';
 })
 export class StatsComponent implements OnInit, OnDestroy {
   players: Player[] = [];
-  playersShowing: Player[]
+  playersShowing: Player[];
   private sus: Subscription;
   filtering = '*';
   pos = ['*', 'C', 'PF', 'SF', 'SG', 'PG'];
@@ -62,6 +62,8 @@ export class StatsComponent implements OnInit, OnDestroy {
 
   filterBy(value: string) {
     this.filtering = value;
-   this.playersShowing = this.players.filter(v => (value === '*')|| (v.position===value)); 
+    this.playersShowing = this.players.filter(
+      v => value === '*' || v.position === value
+    );
   }
 }

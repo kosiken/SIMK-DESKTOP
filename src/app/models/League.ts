@@ -158,7 +158,7 @@ class League {
 
   selectATeam(name) {
     const team = this.util.getTeam(name, this.teams);
-    this.selectTeam = name; 
+    this.selectTeam = name;
     team.selected = true;
 
     //
@@ -199,7 +199,7 @@ class League {
   }
   playFixes(fix: Fixture) {
     let fi = this.fixtures.findIndex(f => f.veen === fix.veen);
-    return this.fixtures.slice(0, fi+1).filter(f => !f.played);
+    return this.fixtures.slice(0, fi + 1).filter(f => !f.played);
   }
 }
 
